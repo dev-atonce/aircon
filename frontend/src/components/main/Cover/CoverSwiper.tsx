@@ -11,8 +11,6 @@ import Image from "next/image";
 import { FaCircle } from "react-icons/fa";
 import Link from "next/link";
 
-
-
 export default function CoverSwiper({ banner }: any) {
   return (
     <div className="header-slider">
@@ -25,8 +23,8 @@ export default function CoverSwiper({ banner }: any) {
           loop={true}
           speed={1200}
           // navigation
-          // pagination={{ type: "bullets", clickable: true }}
-          effect="fade"
+          pagination={{ type: "bullets", clickable: true }}
+          effect="Flip"
           // onSlideChange={() => console.log('slide change')}
           // onSwiper={(swiper) => console.log(swiper)}
         >
