@@ -42,11 +42,9 @@ export default function ServicePage() {
       <div className="bg-slate-100">
         <div className="container mx-auto flex flex-col items-center py-12">
           <h4 className=" text-[#E61717] p-2 text-2xl">
-            สอบถามรายละเอียดเพิ่มเติม หรือเพื่อจองวันขนย้ายได้ที่
+            สอบถามรายละเอียดเพิ่มเติม
           </h4>
-          <h4 className="text-2xl text-slate-800">
-            โทร. +66 2 751 5269 Hotline. +666 5056 4598
-          </h4>
+          <h4 className="text-2xl text-slate-800">035-258-341-4 ต่อ 23</h4>
         </div>
       </div>
     </>

@@ -27,7 +27,7 @@ export default function Loading() {
           <ThreeDots
             height="100"
             width="80"
-            color="#EE3E3E"
+            color="#070B76"
             ariaLabel="bars-loading"
             wrapperStyle={{}}
             wrapperClass=""

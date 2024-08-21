@@ -23,7 +23,7 @@ export default function Client({ data }: any) {
               className="w-full object-cover aspect-[4/2] group-hover:brightness-105 transition-all"
               loading="lazy"
             />
-            <div className="px-4 group-hover:text-[#E61717] pt-2 text-start text-lg transition-all">
+            <div className="px-4 group-hover:text-[#070B76] pt-2 text-start text-lg transition-all">
               {i?.serviceNameTH}
             </div>
           </div>

@@ -21,14 +21,13 @@ export default function NavBar() {
               <Link
                 key={key}
                 href={item.href}
-                className={`menu-item px-4 py-3 nav-button hover:text-white hover:bg-[#EE3E3E]`}
+                className={`menu-item px-4 py-3 nav-button hover:text-white hover:bg-[#070B76]`}
               >
                 {item.title}
               </Link>
             );
         })}
       </div>
-     
     </>
   );
 }

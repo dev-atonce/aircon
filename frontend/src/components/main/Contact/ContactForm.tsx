@@ -95,7 +95,7 @@ export default function Contactform({ branch }: any) {
         <div className="flex justify-start gap-4 col-span-2 ">
           <button
             type="submit"
-            className="uppercase px-12 font-bold py-1 bg-[#0DA1DB] rounded-full  text-white "
+            className="uppercase px-12 font-bold py-1 bg-[#070B76] rounded-full  text-white "
           >
             ส่ง
           </button>

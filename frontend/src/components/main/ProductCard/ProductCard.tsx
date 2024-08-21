@@ -18,7 +18,7 @@ export default function ProductCard({ item }: any) {
         className="w-full object-cover aspect-[3/2] group-hover:brightness-105 transition-all"
         loading="lazy"
       />
-      <div className="px-4 group-hover:text-[#E61717] pt-2 text-start text-lg transition-all">
+      <div className="px-4 group-hover:text-[#070B76] pt-2 text-start text-lg transition-all">
         {item?.serviceNameTH}
       </div>
     </Link>

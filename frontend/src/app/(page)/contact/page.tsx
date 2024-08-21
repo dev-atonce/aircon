@@ -53,7 +53,7 @@ export default async function ContactPage() {
             <div className="flex flex-col gap-2 ">
               <div className="py-4 border-b border-slate-300">
                 <h5 className="text-2xl font-semibold ">
-                  บริษัท สปีดมูฟ จำกัด (สำนักงานใหญ่)
+                  แอร์-คอน พาร์ทส์ เอ็นจิเนียริ่ง
                 </h5>
                 <p>{contact?.addressTH}</p>
               </div>
@@ -62,7 +62,6 @@ export default async function ContactPage() {
                 <p>โทร :{contact?.telephone} </p>
                 {/* <p>แฟกซ์ : +66 2 751 5259</p> */}
                 <p>อีเมล : {contact?.email}</p>
-                <p>อีเมล : {contact?.fax}</p>
                 <p>ID ไลน์ : @speedmove</p>
               </div>
             </div>

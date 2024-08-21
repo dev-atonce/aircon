@@ -47,13 +47,13 @@
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #fb5454;
+  background: #070b76;
   border-radius: 10px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: orange;
+  background: #070b76;
 }
 
 .ant-image-preview-mask {

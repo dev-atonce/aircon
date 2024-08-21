@@ -19,7 +19,7 @@ export default function Footer({ services, lng, logo, contact }: any) {
   let currentYear = currentDate.getFullYear();
 
   return (
-    <div className="text-white bg-[#E61717] ">
+    <div className="text-white bg-[#070B76] ">
       <div className="">
         <div className="container mx-auto pt-4   ">
           <div className=" border-b border-white pb-2 flex items-center justify-between">
@@ -32,7 +32,7 @@ export default function Footer({ services, lng, logo, contact }: any) {
                   <Link
                     key={key}
                     href={item.href}
-                    className={`menu-item px-4 py-3 nav-button hover:text-white hover:bg-[#EE3E3E]`}
+                    className={`menu-item px-4 py-3 nav-button hover:text-white hover:bg-[#4258a0]`}
                   >
                     {item.title}
                   </Link>
@@ -48,11 +48,10 @@ export default function Footer({ services, lng, logo, contact }: any) {
             <div className="flex-col flex items-center lg:items-start gap-3 pb-6  ">
               <p className="">{contact?.addressTH}</p>
               <p className="text-sm">
-                ขนย้ายบ้าน ขนย้ายเฟอร์นิเจอร์ รับจ้างย้ายของ
-                ขนย้ายเครื่องจักรโรงงาน ขนย้ายสำนักงาน ขนย้ายตู้เซฟ
-                รับขนย้ายประติมากรรม ขอคำปรึกษาและประเมินราคาได้ตลอด 24 ชั่วโมง
-                ไม่เว้นวันหยุดนักขัตฤกษ์
-                โดยทีมงานคุณภาพและมีประสบการณ์การขนย้ายอย่างมืออาชีพสิ่งของที่ขนย้ายถึงที่อย่างปลอดภัยแน่นอน
+                บริษัทฯ
+                ได้รับการส่งเสริมการลงทุนในการผลิตชิ้นส่วนอะไหล่แอร์และเครื่องทำความเย็น
+                สำหรับการส่งออกและขายในประเทศรวมถึงการได้รับการรับรองทางด้านคุณภาพ
+                ISO 9001 และ ISO14001 ทุนจดทะเบียนโดยชาวญี่ปุ่น
               </p>
             </div>
           </div>
@@ -74,13 +73,6 @@ export default function Footer({ services, lng, logo, contact }: any) {
                   >
                     <MdEmail size={20} />
                     <span>{contact?.email}</span>
-                  </a>
-                  <a
-                    href={`mailto:${contact?.fax}`}
-                    className="flex items-center gap-2"
-                  >
-                    <MdEmail size={20} />
-                    <span>{contact?.fax}</span>
                   </a>
                 </div>
               </div>
@@ -123,7 +115,7 @@ export default function Footer({ services, lng, logo, contact }: any) {
         <div className="container mx-auto py-4  flex items-center justify-center  text-xs">
           <div>
             <span className="">
-              ©Copyright {currentYear} Speedmove Co., Ltd.
+              ©Copyright {currentYear} Air-Con Parts Engineering Thailand
             </span>
           </div>
         </div>

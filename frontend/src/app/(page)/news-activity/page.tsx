@@ -37,6 +37,9 @@ export default function NewsPage() {
       />
       <div className="container mx-auto">
         <TopSection />
+        <h4 className="text-2xl font-semibold text-slate-800">
+          ข่าวสาร / กิจกรรม
+        </h4>
         <BlogSection
           limit={12}
           typeBlog={["general", "customer", "selfedit"]}

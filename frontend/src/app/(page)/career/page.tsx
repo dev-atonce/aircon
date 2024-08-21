@@ -1,6 +1,7 @@
 import BlogSection from "@/components/main/BlogSection/BlogSection";
 import Cover from "@/components/main/Cover/Cover";
 import Loading from "@/components/main/Loading/Loading";
+import TopSection from "@/components/main/TopSection/TopSection";
 import { Metadata, ResolvingMetadata } from "next";
 
 const pageName = "career";
@@ -35,6 +36,8 @@ export default function CareerPage() {
         prevPage={{ pageName: "หน้าแรก", url: "/" }}
       />
       <div className="container mx-auto">
+        <TopSection />
+        <h4 className="text-2xl font-semibold text-slate-800">ร่วมงานกับเรา</h4>
         <BlogSection
           limit={8}
           // typeBlog={["recruitment"]}

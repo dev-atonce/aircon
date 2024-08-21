@@ -18,7 +18,7 @@ export default function Blog() {
       <div className="flex justify-center">
         <Link
           href="/news-activity"
-          className=" text-white rounded-full px-4 py-2 flex items-center bg-[#EE3E3E]"
+          className=" text-white rounded-full px-4 py-2 flex items-center bg-[#070B76]"
         >
           ดูทั้งหมด
         </Link>

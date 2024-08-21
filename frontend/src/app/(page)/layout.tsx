@@ -7,7 +7,7 @@ import Header from "@/components/main/Header/Header";
 import Footer from "@/components/main/Footer/Footer";
 import { Kanit } from "next/font/google";
 import type { Metadata, ResolvingMetadata } from "next";
-import Favicon from "../../../public/favicon.ico";
+import Favicon from "../../../public/icon.ico";
 const roboto = Kanit({
   weight: ["300", "400", "500", "600", "700", "800"],
   style: ["normal"],
