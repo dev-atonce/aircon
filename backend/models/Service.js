@@ -4,7 +4,9 @@ const uniqueValidator = require("mongoose-unique-validator");
 const schema = new mongoose.Schema(
   {
     serviceNameTH: { type: String },
+    serviceNameEN: { type: String },
     serviceDetailTH: { type: String },
+    serviceDetailEN: { type: String },
     image: { type: String },
     imageAlt: { type: String },
     gallery: { type: Array },
@@ -38,7 +40,11 @@ schema.methods.toJSON = function () {
   return {
     id: this._id,
     serviceNameTH: this.serviceNameTH,
+    serviceNameEN: this.serviceNameEN,
+    serviceNameJP: this.serviceNameJP,
     serviceDetailTH: this.serviceDetailTH,
+    serviceDetailEN: this.serviceDetailEN,
+    serviceDetailJP: this.serviceDetailJP,
     image: this.image,
     imageAlt: this.imageAlt,
     gallery: this.gallery,

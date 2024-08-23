@@ -3,7 +3,11 @@ const mongoose = require("mongoose");
 const schema = new mongoose.Schema(
   {
     nameTH: { type: String },
+    nameEN: { type: String },
+    nameJP: { type: String },
     addressTH: { type: String },
+    addressEN: { type: String },
+    addressJP: { type: String },
     gMap: { type: String },
     telephone: { type: String },
     fax: { type: String },
@@ -22,7 +26,11 @@ schema.methods.toJSON = function () {
   return {
     id: this._id,
     nameTH: this.nameTH,
+    nameEN: this.nameEN,
+    nameEN: this.nameJP,
     addressTH: this.addressTH,
+    addressEN: this.addressEN,
+    addressJP: this.addressJP,
     gMap: this.gMap,
     telephone: this.telephone,
     fax: this.fax,

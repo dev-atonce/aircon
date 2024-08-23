@@ -112,6 +112,17 @@ export default function EditHomePage() {
             <h5 className="py-2 text-sm font-medium text-black dark:text-white">
               Home detail
             </h5>
+            <div className="flex gap-[1px] translate-y-2 translate-x-2 relative z-0">
+              {languages.map((i: any, k: any) => (
+                <button
+                  key={k}
+                  onClick={() => setLangState(i?.toLowerCase())}
+                  className={`${langState === i?.toLowerCase() ? "border-primary text-primary scale-[110%] " : "  border-slate-200 text-slate-200"} uppercase transition-all duration-100 items-center justify-center rounded-md border  px-2 py-1 text-center font-medium hover:bg-opacity-90 `}
+                >
+                  {i}
+                </button>
+              ))}
+            </div>
             {languages?.map(
               (i: any, k: any) =>
                 i?.toLowerCase() === langState && (

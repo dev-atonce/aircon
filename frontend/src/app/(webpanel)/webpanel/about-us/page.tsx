@@ -49,6 +49,17 @@ export default function AboutPage() {
             <div className="col-span-2">
               <div className="bg-white rounded-lg p-2">
                 <h5 className="text-bold">Detail</h5>
+                <div className="flex gap-[1px] translate-y-2 translate-x-2 relative z-0">
+                  {languages.map((i: any, k: any) => (
+                    <button
+                      key={k}
+                      onClick={() => setLangState(i?.toLowerCase())}
+                      className={`${langState === i?.toLowerCase() ? "border-primary text-primary scale-[110%] " : "  border-slate-200 text-slate-200"} uppercase transition-all duration-100 items-center justify-center rounded-md border  px-2 py-1 text-center font-medium hover:bg-opacity-90 `}
+                    >
+                      {i}
+                    </button>
+                  ))}
+                </div>
                 {languages?.map(
                   (i: any, k: any) =>
                     i?.toLowerCase() === langState && (
