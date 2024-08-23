@@ -13,8 +13,9 @@ const fetchService = async (id: any) => {
   return data;
 };
 
-export default async function ServicePage({ params: { id } }: any) {
+export default async function ServicePage({ params: { id, lng } }: any) {
   const data = await fetchService(id);
+  const lang = lng.toUpperCase();
   if (data?.error) {
     redirect("/");
   }
@@ -23,12 +24,12 @@ export default async function ServicePage({ params: { id } }: any) {
     <>
       <Loading />
       <Cover
-        pageName={data?.serviceNameTH}
+        pageName={data[`serviceName${lang}`]}
         prevPage={{ pageName: "หน้าแรก", url: "/" }}
       />
       <div className="container mx-auto">
         <div className="">
-          <ProductContent data={data} />
+          <ProductContent data={data} lang={lang} />
         </div>
       </div>
     </>

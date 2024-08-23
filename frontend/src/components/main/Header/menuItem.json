@@ -1,10 +1,10 @@
 [
-  { "title": "หน้าแรก", "href": "/" },
-  { "title": "เกี่ยวกับเรา", "href": "/about-us" },
-  { "title": "บริการ", "href": "/service" },
+  { "title": "หน้าแรก", "href": "" },
+  { "title": "เกี่ยวกับเรา", "href": "about-us" },
+  { "title": "บริการ", "href": "service" },
 
-  { "title": "บทความ", "href": "/news-activity" },
+  { "title": "บทความ", "href": "news-activity" },
   { "title": "ร่วมงานกับเรา", "href": "career" },
 
-  { "title": "ติดต่อเรา", "href": "/contact" }
+  { "title": "ติดต่อเรา", "href": "contact" }
 ]

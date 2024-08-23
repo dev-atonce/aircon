@@ -1,0 +1,61 @@
+{
+  "header": {
+    "home": "Home",
+    "about-us": "About Us",
+    "company-profile": "Company Profile",
+    "company-history": "Company History",
+    "policy": "Policy",
+    "certificate": "Certificate",
+    "service": "Service",
+    "news-activity": "News / Activity",
+    "flip-book": "Flip Book",
+    "career": "Career",
+    "contact-us": "Contact Us",
+    "mission": "Mission"
+  },
+
+  "component": {
+    "button": { "read-more": "Read More" },
+    "profile": {
+      "name-of-coporation": "Name of Corporation",
+      "head-office": "Head Office",
+      "paid-in-capital": "Paid-in capital",
+      "established": "Established",
+      "representative": "Representative",
+      "no-employee": "Number of Employees",
+      "types-of-business": "Types of Business"
+    },
+    "service": {
+      "sea-freight": "SEA FREIGHT",
+      "air-freight": "AIR FREIGHT",
+      "cross-border": "CROSS BORDER AND IN-TRANSIT FREIGHT",
+      "customs": "CUSTOMS CLEARANCE AND DOMESTIC TRANSPORTATION",
+      "warehouse": "WAREHOUSE AND DISTRIBUTION"
+    },
+
+    "contact-us": {
+      "map": "Map",
+      "send": "Send",
+      "contact-form": "Contact Form",
+      "contact-person": "Contact Person",
+      "company-name": "Company Name",
+      "email": "E-Mail",
+      "telephone": "Telephone",
+      "details": "Details",
+      "topic": "Select Subject"
+    },
+    "news-activity": {
+      "news": "News",
+      "blogs": "Blogs"
+    },
+    "career": {
+      "filter-title": "Search For Job Position",
+      "clear": "Reset",
+      "search": "Search",
+      "keyword": "Search By Keyword",
+      "select-province": "Select Province",
+      "select-position": "Select Position",
+      "location": "Location"
+    }
+  }
+}

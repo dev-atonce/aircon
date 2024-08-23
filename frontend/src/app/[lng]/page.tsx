@@ -1,8 +1,6 @@
 import Loading from "@/components/main/Loading/Loading";
 import CoverSwiper from "@/components/main/Cover/CoverSwiper";
 import About from "@/components/main/Home/About";
-import TrainingBanner from "@/components/main/Home/TrainingBanner";
-
 import Blog from "@/components/main/Home/Blog";
 import Contact from "@/components/main/Home/Contact";
 import Client from "@/components/main/Home/Client";
@@ -63,7 +61,6 @@ export default async function Home() {
       <div className="container mx-auto">
         {/*Customer*/}
         <Client data={client} />
-
         {/* Blog */}
         <Blog />
       </div>

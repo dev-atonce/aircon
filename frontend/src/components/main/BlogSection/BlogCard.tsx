@@ -5,6 +5,7 @@ import Image from "next/image";
 interface BlogCardProps {
   data: any[];
   type: any;
+  lang: string;
 }
 function formatDate(dateTimeString: any) {
   // Create a new Date object from the input string
@@ -19,7 +20,7 @@ function formatDate(dateTimeString: any) {
   return `${day}.${month}.${year}`;
 }
 
-const BlogCard = ({ data, type }: BlogCardProps) => {
+const BlogCard = ({ data, type, lang }: BlogCardProps) => {
   return data?.map((item: any, key: any) => {
     return (
       <Col
@@ -65,13 +66,13 @@ const BlogCard = ({ data, type }: BlogCardProps) => {
                 className={`${!type?.includes("recruitment") ? "line-clamp-1" : "line-clamp-2"}  font-bold  text-slate-800 mb-2`}
               >
                 {type?.includes("project")
-                  ? item?.projectNameTH
-                  : item?.titleTH}
+                  ? item[`projectName${lang}`]
+                  : item[`title${lang}`]}
               </h3>
               {/* <Divider className="mt-3 mb-2" /> */}
               {!type?.includes("recruitment") && (
                 <p className="line-clamp-2 h-11 text-slate-600">
-                  {item?.descriptionTH}
+                  {item[`description${lang}`]}
                 </p>
               )}
             </div>

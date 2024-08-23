@@ -1,11 +1,6 @@
 import Cover from "@/components/main/Cover/Cover";
-
 import Loading from "@/components/main/Loading/Loading";
-import Contact from "@/components/main/Contact/page";
-import Image from "next/image";
 import { Metadata, ResolvingMetadata } from "next";
-import { FaPhoneAlt } from "react-icons/fa";
-import { MdFax } from "react-icons/md";
 import Contactform from "@/components/main/Contact/ContactForm";
 
 const pageName = "contact";
@@ -14,7 +9,7 @@ export async function generateMetadata(
   parent: ResolvingMetadata
 ): Promise<Metadata> {
   // read route params
-  const lng = "TH";
+  const lng = params.lng?.toUpperCase();
 
   const seoRoute = `${process.env.NEXT_PUBLIC_BACK_END_URL}/api/v1/page/seo/page-name/${pageName}`;
 
@@ -38,7 +33,7 @@ const fetchData = async () => {
   return await data.json();
 };
 
-export default async function ContactPage() {
+export default async function ContactPage({ params: { lng } }: any) {
   const contact = await fetchData();
   return (
     <>
@@ -55,7 +50,7 @@ export default async function ContactPage() {
                 <h5 className="text-2xl font-semibold ">
                   แอร์-คอน พาร์ทส์ เอ็นจิเนียริ่ง
                 </h5>
-                <p>{contact?.addressTH}</p>
+                <p>{contact[`address${lng.toUpperCase()}`]}</p>
               </div>
               <div className="py-4 ">
                 <h5 className="text-2xl font-semibold ">ติดต่อ</h5>

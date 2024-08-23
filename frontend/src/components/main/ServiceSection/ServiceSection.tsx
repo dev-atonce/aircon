@@ -10,13 +10,12 @@ const fetchData = async () => {
   return result.rows;
 };
 
-export default async function ServiceSection({ data }: any) {
+export default async function ServiceSection({ lang }: any) {
   const services = await fetchData();
-  
   return (
     <div className="">
       <div className="grid grid-cols-12 gap-4">
-        {services?.map((i: any, k: any) => <ProductCard item={i} key={k} />)}
+        {services?.map((i: any, k: any) => <ProductCard item={i} key={k} lang={lang} />)}
       </div>
     </div>
   );

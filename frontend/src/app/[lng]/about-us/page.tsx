@@ -1,8 +1,6 @@
 import Cover from "@/components/main/Cover/Cover";
 import DynamicContent from "@/components/main/DynamicContent/DynamicContent";
 import Loading from "@/components/main/Loading/Loading";
-import Image from "next/image";
-
 import { Metadata, ResolvingMetadata } from "next";
 
 const pageName = "about-us";
@@ -12,7 +10,7 @@ export async function generateMetadata(
   parent: ResolvingMetadata
 ): Promise<Metadata> {
   // read route params
-  const lng = "TH";
+  const lng = params.lng?.toUpperCase();
 
   const seoRoute = `${process.env.NEXT_PUBLIC_BACK_END_URL}/api/v1/page/seo/page-name/${pageName}`;
 
@@ -37,18 +35,19 @@ const fetchAbout = async () => {
   return data;
 };
 
-export default async function AboutPage() {
-  const about = await fetchAbout()
+export default async function AboutPage({ params: { lng } }: any) {
+  const about = await fetchAbout();
+  const lang = lng.toUpperCase();
   return (
     <>
       <Loading />
       <Cover
-        pageName={"เกี่ยวกับเรา"}
+        pageName={lng}
         prevPage={{ pageName: "หน้าแรก", url: "/" }}
+        lang={lang}
       />
       <div className="container mx-auto">
-        <DynamicContent content={about?.aboutUsTH} />
-       
+        <DynamicContent content={about[`aboutUs${lang}`]} />
       </div>
     </>
   );

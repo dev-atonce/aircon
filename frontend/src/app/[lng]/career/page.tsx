@@ -11,7 +11,7 @@ export async function generateMetadata(
   parent: ResolvingMetadata
 ): Promise<Metadata> {
   // read route params
-  const lng = "TH";
+  const lng = params.lng?.toUpperCase();
 
   const seoRoute = `${process.env.NEXT_PUBLIC_BACK_END_URL}/api/v1/page/seo/page-name/${pageName}`;
 
@@ -27,22 +27,24 @@ export async function generateMetadata(
   };
 }
 
-export default function CareerPage() {
+export default function CareerPage({ params: { lng } }: any) {
+  const lang = lng.toUpperCase();
   return (
     <>
       <Loading />
       <Cover
-        pageName={"ร่วมงานกับเรา"}
+        pageName={lang}
         prevPage={{ pageName: "หน้าแรก", url: "/" }}
+        lang={lang}
       />
       <div className="container mx-auto">
-        <TopSection />
+        <TopSection lang={lang} />
         <h4 className="text-2xl font-semibold text-slate-800">ร่วมงานกับเรา</h4>
         <BlogSection
           limit={8}
-          // typeBlog={["recruitment"]}
           typeBlog={["recruitment"]}
           home={false}
+          lang={lang}
         />
       </div>
     </>

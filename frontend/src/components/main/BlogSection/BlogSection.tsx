@@ -8,9 +8,10 @@ interface BlogSectionProps {
   limit: number;
   typeBlog: string | string[];
   home: boolean;
+  lang: string;
 }
 
-const BlogSection = ({ limit, typeBlog, home }: BlogSectionProps) => {
+const BlogSection = ({ limit, typeBlog, home, lang }: BlogSectionProps) => {
   const [page, setPage] = useState(1);
   const [blogList, setBlogList] = useState([]);
   const [total, setTotal] = useState(0);
@@ -36,7 +37,7 @@ const BlogSection = ({ limit, typeBlog, home }: BlogSectionProps) => {
       ) : (
         <>
           <Row gutter={[16, 16]}>
-            <BlogCard data={blogList} type={typeBlog}></BlogCard>
+            <BlogCard data={blogList} type={typeBlog} lang={lang}></BlogCard>
           </Row>
           {!home && (
             <AntPagination

@@ -2,17 +2,16 @@ import BlogSection from "@/components/main/BlogSection/BlogSection";
 import Cover from "@/components/main/Cover/Cover";
 import Loading from "@/components/main/Loading/Loading";
 import TopSection from "@/components/main/TopSection/TopSection";
-import ServiceSection from "@/components/main/ServiceSection/ServiceSection";
 import { Metadata, ResolvingMetadata } from "next";
 
-const pageName = "service";
+const pageName = "news-activity";
 
 export async function generateMetadata(
   { params, searchParams }: any,
   parent: ResolvingMetadata
 ): Promise<Metadata> {
   // read route params
-  const lng = "TH";
+  const lng = params.lng?.toUpperCase();
 
   const seoRoute = `${process.env.NEXT_PUBLIC_BACK_END_URL}/api/v1/page/seo/page-name/${pageName}`;
 
@@ -27,25 +26,28 @@ export async function generateMetadata(
     keywords: response[`seoKeyword${lng}`],
   };
 }
-export default function ServicePage() {
+
+export default function NewsPage({ params: { lng } }: any) {
+  const lang = lng.toUpperCase();
   return (
     <>
       <Loading />
       <Cover
-        pageName={"บริการของเรา"}
+        pageName={lang}
         prevPage={{ pageName: "หน้าแรก", url: "/" }}
+        lang={lang}
       />
-      <div className="container mx-auto py-4">
-        <TopSection />
-        <ServiceSection />
-      </div>
-      <div className="bg-slate-100">
-        <div className="container mx-auto flex flex-col items-center py-12">
-          <h4 className=" text-[#E61717] p-2 text-2xl">
-            สอบถามรายละเอียดเพิ่มเติม
-          </h4>
-          <h4 className="text-2xl text-slate-800">035-258-341-4 ต่อ 23</h4>
-        </div>
+      <div className="container mx-auto">
+        <TopSection lang={lang} />
+        <h4 className="text-2xl font-semibold text-slate-800">
+          ข่าวสาร / กิจกรรม
+        </h4>
+        <BlogSection
+          limit={12}
+          typeBlog={["general", "customer", "selfedit"]}
+          home={false}
+          lang={lang}
+        />
       </div>
     </>
   );

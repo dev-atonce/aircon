@@ -20,7 +20,7 @@ export default function NavBar() {
             return (
               <Link
                 key={key}
-                href={item.href}
+                href={`/th/${item.href}`}
                 className={`menu-item px-4 py-3 nav-button hover:text-white hover:bg-[#070B76]`}
               >
                 {item.title}

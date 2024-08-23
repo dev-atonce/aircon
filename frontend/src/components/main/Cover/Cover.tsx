@@ -1,6 +1,10 @@
+"use client";
 import Image from "next/image";
 import Breadcrumb from "../Breadcrumb/Breadcrumb";
-export default function Cover({ pageName, prevPage }: any) {
+import { useTranslation } from "react-i18next";
+
+export default function Cover({ pageName, prevPage, lang }: any) {
+  // const { t } = useTranslation(lang);
   return (
     <div className="w-full pb-4 lg:pb-0 ">
       <div className="relative ">
@@ -24,7 +28,7 @@ export default function Cover({ pageName, prevPage }: any) {
         </div>
       </div>
       <div className="container mx-auto ">
-        <div className=" py-4 hidden md:block">
+        <div className="py-4 hidden md:block">
           <Breadcrumb pageName={pageName} prevPage={prevPage} />
         </div>
       </div>

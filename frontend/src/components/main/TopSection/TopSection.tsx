@@ -1,5 +1,5 @@
 import Image from "next/image";
-export default function TopSecton() {
+export default function TopSecton({ lang }: { lang: string }) {
   return (
     <div className=" py-6 mb-6 border-b border-slate-200 grid grid-cols-12 gap-4">
       <div className="col-span-12 lg:col-span-6 xl:col-span-4">
