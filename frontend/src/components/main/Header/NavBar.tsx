@@ -2,7 +2,7 @@ import Link from "next/link";
 import NavDropDown from "./NavDropdown";
 import menuItem from "./menuItem.json";
 
-export default function NavBar() {
+export default function NavBar({ lang }: { lang: string }) {
   return (
     <>
       <div className="nav-menu" id="scrollable-content">
@@ -20,7 +20,7 @@ export default function NavBar() {
             return (
               <Link
                 key={key}
-                href={`/th/${item.href}`}
+                href={`/${lang}/${item.href}`}
                 className={`menu-item px-4 py-3 nav-button hover:text-white hover:bg-[#070B76]`}
               >
                 {item.title}

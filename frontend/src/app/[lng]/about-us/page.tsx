@@ -5,8 +5,12 @@ import { Metadata, ResolvingMetadata } from "next";
 
 const pageName = "about-us";
 
+interface Props {
+  params: { lng: string };
+}
+
 export async function generateMetadata(
-  { params, searchParams }: any,
+  { params }: Props,
   parent: ResolvingMetadata
 ): Promise<Metadata> {
   // read route params
@@ -35,16 +39,16 @@ const fetchAbout = async () => {
   return data;
 };
 
-export default async function AboutPage({ params: { lng } }: any) {
+export default async function AboutPage({ params }: Props) {
   const about = await fetchAbout();
-  const lang = lng.toUpperCase();
+  const lang = params.lng.toUpperCase();
   return (
     <>
       <Loading />
       <Cover
-        pageName={lng}
-        prevPage={{ pageName: "หน้าแรก", url: "/" }}
-        lang={lang}
+        pageName={"page.about-us"}
+        prevPage={{ pageName: "page.home", url: "/" }}
+        lang={params.lng}
       />
       <div className="container mx-auto">
         <DynamicContent content={about[`aboutUs${lang}`]} />

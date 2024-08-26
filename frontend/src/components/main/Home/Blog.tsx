@@ -1,7 +1,11 @@
 import Link from "next/link";
 import BlogSection from "../BlogSection/BlogSection";
 
-export default function Blog() {
+interface BlogProps {
+  lang: string;
+}
+
+export default function Blog({ lang }: BlogProps) {
   return (
     <div className="border-slate-200 py-12 ">
       <div className="flex items-center justify-between">
@@ -12,6 +16,7 @@ export default function Blog() {
           home={true}
           limit={6}
           typeBlog={["general", "customer", "selfedit"]}
+          lang={lang}
         />
       </div>
       <div className="flex justify-center">

@@ -19,6 +19,7 @@ export default function Header({ logo, contact }: any) {
   const languages = [
     { label: "Thai", value: "th" },
     { label: `English`, value: "en" },
+    { label: `Japan`, value: "ja" },
   ];
 
   const toggleSidebar = () => {
@@ -49,52 +50,6 @@ export default function Header({ logo, contact }: any) {
       closeSideBar();
     }
   };
-
-  // useEffect(() => {
-  //   const loadFacebookSDK = () => {
-  //     if (document.getElementById("facebook-jssdk")) {
-  //       return;
-  //     }
-  //     const script = document.createElement("script");
-  //     script.id = "facebook-jssdk";
-  //     script.src = "https://connect.facebook.net/en_US/sdk.js";
-  //     script.async = true;
-  //     script.defer = true;
-  //     script.crossOrigin = "anonymous";
-  //     script.onload = () => {
-  //       // @ts-ignore
-  //       (window.FB as any).init({
-  //         xfbml: true,
-  //         version: "v20.0",
-  //       });
-  //     };
-  //     document.body.appendChild(script);
-  //   };
-  //   loadFacebookSDK();
-
-  //   if (hasCookie("googtrans"))
-  //     // @ts-ignore
-  //     setCurrentLanguage(getCookie("googtrans")?.replace("/auto/", ""));
-  //   else setCurrentLanguage("th");
-
-  //   // var addScript = document.createElement('script');
-  //   // addScript.setAttribute('src', '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit');
-  //   // document.body.appendChild(addScript);
-  //   // @ts-ignore
-  //   window.googleTranslateElementInit = googleTranslateElementInit;
-
-  //   const hoverStyle = `.nav-button:hover { color: ${primaryColor};  }`;
-  //   const styleElement = document.createElement("style");
-  //   styleElement.innerHTML = hoverStyle;
-  //   document.head.appendChild(styleElement);
-
-  //   window.addEventListener("resize", adjust);
-
-  //   return () => {
-  //     document.head.removeChild(styleElement);
-  //     document.removeEventListener("resize", adjust);
-  //   };
-  // }, [primaryColor]);
 
   return (
     <div className="shadow-md ">
@@ -164,7 +119,7 @@ export default function Header({ logo, contact }: any) {
               <div className="">
                 <div className="responsive-nav">
                   <div className="flex justify-end">
-                    <NavBar />
+                    <NavBar lang={"th"} />
                   </div>
                   <div className="more-menu"></div>
                 </div>

@@ -1,60 +1,11 @@
 {
-  "header": {
+  "page": {
     "home": "หน้าแรก",
     "about-us": "เกี่ยวกับเรา",
-    "company-profile": "โปรไฟล์บริษัท",
-    "company-history": "ประวัติความเป็นมา",
     "policy": "นโยบาย",
-    "certificate": "ใบรับรอง",
     "service": "บริการ",
-    "news-activity": "ข่าวสาร / กิจกรรม",
-    "flip-book": "Flip Book",
+    "blog": "ข่าวสาร / กิจกรรม",
     "career": "ร่วมงานกับเรา",
-    "contact-us": "ติดต่อเรา",
-    "mission": "พันธกิจของเรา"
-  },
-  "component": {
-    "button": { "read-more": "อ่านต่อ" },
-    "profile": {
-      "name-of-coporation": "ชื่อบริษัท",
-      "head-office": "สำนักงานใหญ่",
-      "paid-in-capital": "ทุนจดทะเบียน",
-      "established": "ก่อตั้งเมื่อ",
-      "representative": "ผู้มอบอำนาจ",
-      "no-employee": "จำนวนพนักงาน",
-      "types-of-business": "ประเภทธุรกิจ"
-    },
-    "service": {
-      "sea-freight": "การขนส่งทางทะเล",
-      "air-freight": "การขนส่งทางอากาศ",
-      "cross-border": "การขนส่งข้ามพรมแดนและการขนส่งระหว่างทาง",
-      "customs": "พิธีการศุลกากรและการขนส่งภายในประเทศ",
-      "warehouse": "คลังสินค้าและการกระจายสินค้า"
-    },
-    "contact-us": {
-      "map": "แผนที่",
-      "send": "ส่ง",
-      "contact-form": "ฟอร์มการติดต่อ",
-      "contact-person": "ผู้ติดต่อ",
-      "company-name": "บริษัท",
-      "email": "E-Mail",
-      "telephone": "โทรศัพท์",
-      "details": "เนื้อหาการติดต่อ",
-      "topic": "เรื่อง"
-    },
-
-    "news-activity": {
-      "news": "ข่าวสาร",
-      "blogs": "บทความ"
-    },
-    "career": {
-      "filter-title": "ค้นหาตำแหน่งงาน",
-      "clear": "ล้างค่า",
-      "search": "ค้นหา",
-      "keyword": "ค้นหาโดยคีย์เวิร์ด",
-      "select-province": "เลือกจังหวัด",
-      "select-position": "เลือกตำแหน่งงาน",
-      "location": "สถานที่ทำงาน"
-    }
+    "contact-us": "ติดต่อเรา"
   }
 }

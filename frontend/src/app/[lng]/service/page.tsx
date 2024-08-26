@@ -1,4 +1,3 @@
-import BlogSection from "@/components/main/BlogSection/BlogSection";
 import Cover from "@/components/main/Cover/Cover";
 import Loading from "@/components/main/Loading/Loading";
 import TopSection from "@/components/main/TopSection/TopSection";
@@ -7,8 +6,12 @@ import { Metadata, ResolvingMetadata } from "next";
 
 const pageName = "service";
 
+interface Props {
+  params: { lng: string };
+}
+
 export async function generateMetadata(
-  { params, searchParams }: any,
+  { params }: Props,
   parent: ResolvingMetadata
 ): Promise<Metadata> {
   // read route params
@@ -27,14 +30,16 @@ export async function generateMetadata(
     keywords: response[`seoKeyword${lng}`],
   };
 }
-export default function ServicePage({ params: { lng } }: any) {
-  const lang = lng.toUpperCase();
+
+export default function ServicePage({ params }: Props) {
+  const lang = params.lng.toUpperCase();
   return (
     <>
       <Loading />
       <Cover
-        pageName={lng}
-        prevPage={{ pageName: "หน้าแรก", url: "/" }}
+        pageName={"page.service"}
+        prevPage={{ pageName: "page.home", url: "/" }}
+        lang={params.lng}
       />
       <div className="container mx-auto py-4">
         <TopSection lang={lang} />

@@ -6,8 +6,12 @@ import { Metadata, ResolvingMetadata } from "next";
 
 const pageName = "career";
 
+interface Props {
+  params: { lng: string };
+}
+
 export async function generateMetadata(
-  { params, searchParams }: any,
+  { params }: Props,
   parent: ResolvingMetadata
 ): Promise<Metadata> {
   // read route params
@@ -27,14 +31,14 @@ export async function generateMetadata(
   };
 }
 
-export default function CareerPage({ params: { lng } }: any) {
-  const lang = lng.toUpperCase();
+export default function CareerPage({ params }: Props) {
+  const lang = params.lng.toUpperCase();
   return (
     <>
       <Loading />
       <Cover
-        pageName={lang}
-        prevPage={{ pageName: "หน้าแรก", url: "/" }}
+        pageName={"page.career"}
+        prevPage={{ pageName: "page.home", url: "/" }}
         lang={lang}
       />
       <div className="container mx-auto">

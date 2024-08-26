@@ -1,15 +1,8 @@
 "use client";
-import Input from "@/components/webpanel/Input/Input";
-import TextArea from "@/components/webpanel/Input/TextArea";
-import { useEffect, useState, useContext } from "react";
+
 import { useForm } from "react-hook-form";
 
-import { useTranslation } from "react-i18next";
-import { FetchContext } from "@/contexts/FetchContext";
-
-export default function Contactform({ branch }: any) {
-  const [formState, setFormState] = useState({ title: "", value: "" });
-
+export default function Contactform() {
   const {
     register,
     handleSubmit,
@@ -18,8 +11,6 @@ export default function Contactform({ branch }: any) {
 
   const onSubmit = (data: any) => {
     const contactData = { ...data };
-
-    console.log(contactData);
   };
 
   return (
