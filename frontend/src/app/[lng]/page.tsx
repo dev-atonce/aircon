@@ -64,7 +64,7 @@ export default async function Home({ params }: Props) {
   const banner = await fetchBanner();
   const client = await fetchClient();
   const about = await fetchAbout();
-
+  
   return (
     <>
       <Loading />

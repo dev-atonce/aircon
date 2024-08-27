@@ -6,14 +6,19 @@ import "./globals.css";
 import Header from "@/components/main/Header/Header";
 import Footer from "@/components/main/Footer/Footer";
 import { Kanit } from "next/font/google";
-import type { Metadata, ResolvingMetadata } from "next";
-import Favicon from "../../../public/favicon.ico";
+import { dir } from "i18next";
+import { languages } from "../i18n/settings";
+
 const roboto = Kanit({
   weight: ["300", "400", "500", "600", "700", "800"],
   style: ["normal"],
   subsets: ["latin"],
   display: "swap",
 });
+
+export async function generateStaticParams() {
+  return languages.map((lng) => ({ lng }));
+}
 
 const fetchLogo = async () => {
   const header = await fetch(
@@ -37,33 +42,6 @@ const fetchContact = async () => {
   return res?.json();
 };
 
-const pageName = "home";
-export const ico: Metadata = {
-  title: "favicon",
-  description: "By Owner",
-  icons: [{ rel: "icon", url: Favicon.src }],
-};
-export async function generateMetadata(
-  { params, searchParams }: any,
-  parent: ResolvingMetadata
-): Promise<Metadata> {
-  // read route params
-  const lng = params.lng?.toUpperCase();
-
-  const seoRoute = `${process.env.NEXT_PUBLIC_BACK_END_URL}/api/v1/page/seo/page-name/${pageName}`;
-
-  // fetch data
-  const response = await fetch(seoRoute, { cache: "no-store" }).then((res) =>
-    res.json()
-  );
-
-  return {
-    title: response[`seoTitle${lng}`],
-    description: response[`seoDescription${lng}`],
-    keywords: response[`seoKeyword${lng}`],
-  };
-}
-
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
@@ -73,14 +51,16 @@ export const viewport: Viewport = {
 
 export default async function RootLayout({
   children,
+  params: { lng },
 }: {
   children: React.ReactNode;
+  params: { lng: string };
 }) {
   const logos = await fetchLogo();
   const contact = await fetchContact();
 
   return (
-    <html lang="th">
+    <html lang={lng} dir={dir(lng)}>
       <ConfigProvider
         theme={{
           token: {
@@ -91,9 +71,9 @@ export default async function RootLayout({
         <FetchProvider>
           <PageSettingProvider>
             <body className={roboto.className}>
-              <Header logo={logos?.header?.image} contact={contact} />
+              <Header logo={logos?.header?.image} contact={contact} lang={lng} />
               {children}
-              <Footer logo={logos?.footer?.image} contact={contact} />
+              <Footer logo={logos?.footer?.image} contact={contact} lang={lng} />
             </body>
           </PageSettingProvider>
         </FetchProvider>

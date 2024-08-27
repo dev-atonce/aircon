@@ -12,7 +12,7 @@ import { MdEmail, MdOutlineMailOutline } from "react-icons/md";
 
 import menuItem from "@/components/main/Header/menuItem.json";
 
-export default function Footer({ services, lng, logo, contact }: any) {
+export default function Footer({ logo, contact, lang }: any) {
   const { primaryColor }: any = useContext(PageSettingContext);
 
   let currentDate = new Date();
@@ -31,7 +31,7 @@ export default function Footer({ services, lng, logo, contact }: any) {
                 return (
                   <Link
                     key={key}
-                    href={item.href}
+                    href={`/${lang}/${item.href}`}
                     className={`menu-item px-4 py-3 nav-button hover:text-white hover:bg-[#4258a0]`}
                   >
                     {item.title}

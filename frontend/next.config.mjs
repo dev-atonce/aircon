@@ -9,28 +9,8 @@ const nextConfig = {
       },
       {
         protocol: "https",
-        hostname: "cdn.dummyjson.com",
-        port: "",
-      },
-      {
-        protocol: "http",
-        hostname: "rent.at-once.info",
-        port: "",
-      },
-      {
-        protocol: "https",
-        hostname: "api.rent.co.th",
-        port: "",
-      },
-      {
-        protocol: "https",
         hostname: "api-speedmove.at-once.info",
         port: "",
-      },
-      {
-        protocol: "http",
-        hostname: "192.168.0.113",
-        port: "3000",
       },
     ],
   },

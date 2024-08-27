@@ -39,7 +39,7 @@ export default function NewsPage({ params }: Props) {
       <Cover
         pageName={"page.blog"}
         prevPage={{ pageName: "page.home", url: "/" }}
-        lang={lang}
+        lang={params.lng}
       />
       <div className="container mx-auto">
         <TopSection lang={lang} />

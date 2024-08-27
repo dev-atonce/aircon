@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import Breadcrumb from "../Breadcrumb/Breadcrumb";
-import { useTranslation } from "react-i18next";
+import { useTranslation } from "@/app/i18n/client";
 
 interface CoverProps {
   pageName: string;
@@ -25,19 +25,19 @@ export default function Cover({ pageName, prevPage, lang }: CoverProps) {
         />
         <div className="absolute top-4 xl:top-14 left-[50%] translate-x-[-50%] flex flex-col items-center text-white">
           <h2 className=" text-xl lg:text-4xl font-semibold ">
-            {t(pageName)}
+            {t(`${pageName}`)}
           </h2>
-          <p className="text-xl hidden lg:block">
-            AIR-CON PARTS ENGINEERING (THAILAND) CO., LTD.
-          </p>
-          <p className=" hidden lg:block">
-            ผลิตและจำหน่ายชิ้นส่วนอะไหล่แอร์และเครื่องทำความเย็น
-          </p>
+          <p className="text-xl hidden lg:block">{t("cover.title")}</p>
+          <p className=" hidden lg:block">{t("cover.caption")}</p>
         </div>
       </div>
       <div className="container mx-auto ">
         <div className="py-4 hidden md:block">
-          <Breadcrumb pageName={pageName} prevPage={prevPage} />
+          <Breadcrumb
+            pageName={t(`${pageName}`)}
+            prevPage={prevPage}
+            lang={lang}
+          />
         </div>
       </div>
     </div>

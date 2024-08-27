@@ -7,7 +7,7 @@ import Image from "next/image";
 import SideBar from "./SideBar";
 import NavBar from "./NavBar";
 
-export default function Header({ logo, contact }: any) {
+export default function Header({ logo, contact, lang }: any) {
   const [currentLanguage, setCurrentLanguage] = useState<string>("th");
   const [openLang, setOpenLang] = useState<Boolean>(false);
   const [openID, setOpenID] = useState<String>("");
@@ -119,7 +119,7 @@ export default function Header({ logo, contact }: any) {
               <div className="">
                 <div className="responsive-nav">
                   <div className="flex justify-end">
-                    <NavBar lang={"th"} />
+                    <NavBar lang={lang} />
                   </div>
                   <div className="more-menu"></div>
                 </div>

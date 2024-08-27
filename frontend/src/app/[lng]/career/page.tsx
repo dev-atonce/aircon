@@ -39,7 +39,7 @@ export default function CareerPage({ params }: Props) {
       <Cover
         pageName={"page.career"}
         prevPage={{ pageName: "page.home", url: "/" }}
-        lang={lang}
+        lang={params.lng}
       />
       <div className="container mx-auto">
         <TopSection lang={lang} />
