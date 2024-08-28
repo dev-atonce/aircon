@@ -31,10 +31,10 @@ export default function Footer({ logo, contact, lang }: any) {
                 return (
                   <Link
                     key={key}
-                    href={`/${lang}/${item.href}`}
+                    href={`/${lang}/${item[lang].href}`}
                     className={`menu-item px-4 py-3 nav-button hover:text-white hover:bg-[#4258a0]`}
                   >
-                    {item.title}
+                    {item[lang].title}
                   </Link>
                 );
               })}

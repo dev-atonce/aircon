@@ -16,12 +16,6 @@ export default function Header({ logo, contact, lang }: any) {
   const { primaryColor }: any = useContext(PageSettingContext);
   const [openSubMenu, setOpenSubMenu] = useState<Boolean>(false);
 
-  const languages = [
-    { label: "Thai", value: "th" },
-    { label: `English`, value: "en" },
-    { label: `Japan`, value: "ja" },
-  ];
-
   const toggleSidebar = () => {
     setIsOpen(!isOpen);
     document.querySelector("html")?.classList.toggle("nav-open");
@@ -58,7 +52,7 @@ export default function Header({ logo, contact, lang }: any) {
           className={`fixed block lg:none top-0 left-0 h-full w-80 text-black bg-slate-200 transition-transform duration-300 z-40 ${isOpen ? "translate-x-0" : "-translate-x-full"}`}
         >
           <div className="grid content-stretch">
-            <SideBar sideBar={{ toggleSubMenu, closeSideBar }} />
+            <SideBar sideBar={{ toggleSubMenu, closeSideBar }} lang={lang} />
           </div>
         </div>
       </div>

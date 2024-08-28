@@ -7,12 +7,12 @@ export default function NavBar({ lang }: { lang: string }) {
     <>
       <div className="nav-menu" id="scrollable-content">
         {menuItem.map((item: any, key: number) => {
-          if (item.subMenu)
+          if (item[lang].subMenu)
             return (
               <NavDropDown
                 key={key}
-                title={item.title}
-                dropdownItems={item.subMenu}
+                title={item[lang].title}
+                dropdownItems={item[lang].subMenu}
                 sectionKey={key}
               />
             );
@@ -20,10 +20,10 @@ export default function NavBar({ lang }: { lang: string }) {
             return (
               <Link
                 key={key}
-                href={`/${lang}/${item.href}`}
+                href={`/${lang}/${item[lang].href}`}
                 className={`menu-item px-4 py-3 nav-button hover:text-white hover:bg-[#070B76]`}
               >
-                {item.title}
+                {item[lang].title}
               </Link>
             );
         })}

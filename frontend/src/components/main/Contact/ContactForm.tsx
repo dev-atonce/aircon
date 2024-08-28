@@ -1,8 +1,9 @@
 "use client";
 
 import { useForm } from "react-hook-form";
+import { useTranslation } from "@/app/i18n/client";
 
-export default function Contactform() {
+export default function Contactform({lang}: {lang: string}) {
   const {
     register,
     handleSubmit,
@@ -12,6 +13,8 @@ export default function Contactform() {
   const onSubmit = (data: any) => {
     const contactData = { ...data };
   };
+
+  const { t } = useTranslation(lang);
 
   return (
     <div className="flex flex-col gap-4">
@@ -27,7 +30,7 @@ export default function Contactform() {
           <input
             {...register("contactPerson", { required: true, maxLength: 100 })}
             type="text"
-            placeholder={"ชื่อ - สกุล"}
+            placeholder={t('contact-form.name')}
             className="bg-white w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
           />
           {errors?.contactPerson?.type === "required" && (
@@ -38,7 +41,7 @@ export default function Contactform() {
           <input
             {...register("place", { required: true, maxLength: 100 })}
             type="text"
-            placeholder={"สถานที่ใช้งาน"}
+            placeholder={t('contact-form.place')}
             className="bg-white w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
           />
           {errors?.place?.type === "required" && (
@@ -49,7 +52,7 @@ export default function Contactform() {
           <input
             {...register("contactEmail", { required: true, maxLength: 100 })}
             type="email"
-            placeholder={"อีเมลล์"}
+            placeholder={t('contact-form.email')}
             className="bg-white w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
           />
 
@@ -61,7 +64,7 @@ export default function Contactform() {
           <input
             {...register("phone", { pattern: /[\d+]/g, required: true })}
             type="text"
-            placeholder={"เบอร์โทรศัพท์"}
+            placeholder={t('contact-form.telephone')}
             className="bg-white w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
           />
           {errors?.phone?.type === "pattern" && (
@@ -76,7 +79,7 @@ export default function Contactform() {
           <textarea
             {...register("detail", { required: true })}
             rows={3}
-            placeholder={"รายละเอียด"}
+            placeholder={t('contact-form.detail')}
             className="bg-white w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
           />
           {errors?.detail?.type === "required" && (

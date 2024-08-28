@@ -2,6 +2,7 @@ import Cover from "@/components/main/Cover/Cover";
 import Loading from "@/components/main/Loading/Loading";
 import { Metadata, ResolvingMetadata } from "next";
 import Contactform from "@/components/main/Contact/ContactForm";
+import { useTranslation } from "../../i18n";
 
 const pageName = "contact";
 interface Props {
@@ -40,6 +41,8 @@ const fetchData = async () => {
 export default async function ContactPage({ params }: Props) {
   const contact = await fetchData();
   const lang = params.lng.toUpperCase();
+  const { t } = await useTranslation(params.lng);
+
   return (
     <>
       <Loading />
@@ -54,24 +57,29 @@ export default async function ContactPage({ params }: Props) {
             <div className="flex flex-col gap-2 ">
               <div className="py-4 border-b border-slate-300">
                 <h5 className="text-2xl font-semibold ">
-                  แอร์-คอน พาร์ทส์ เอ็นจิเนียริ่ง
+                  {contact[`name${lang}`]}
                 </h5>
                 <p>{contact[`address${lang}`]}</p>
               </div>
               <div className="py-4 ">
-                <h5 className="text-2xl font-semibold ">ติดต่อ</h5>
-                <p>โทร :{contact?.telephone} </p>
-                {/* <p>แฟกซ์ : +66 2 751 5259</p> */}
-                <p>อีเมล : {contact?.email}</p>
-                <p>ID ไลน์ : @speedmove</p>
+                <h5 className="text-2xl font-semibold ">
+                  {t("contact.title")}
+                </h5>
+                <p>
+                  {t("contact.telephone")} :{contact?.telephone}{" "}
+                </p>
+                <p>
+                  {t("contact.email")} : {contact?.email}
+                </p>
+                <p>{t("contact.line")} : {contact?.line}</p>
               </div>
             </div>
           </div>
           <div className="col-span-2 lg:col-span-1 ">
             <h6 className="text-xl font-semibold text-slate-600">
-              ฟอร์มติดต่อ
+              {t("contact.contact-form")}
             </h6>
-            <Contactform />
+            <Contactform lang={params.lng}/>
           </div>
         </div>
         <div className="py-6">

@@ -2,7 +2,7 @@ import Link from "next/link";
 import { FaPlus, FaFacebookF, FaYoutube, FaLine } from "react-icons/fa";
 import menuItem from "./menuItem.json";
 
-export default function SideBar({ sideBar, language }: any) {
+export default function SideBar({ sideBar, lang }: any) {
   return (
     <div className="flex">
       <div
@@ -13,12 +13,12 @@ export default function SideBar({ sideBar, language }: any) {
           {menuItem.map((item: any, index: any) => (
             <li key={index} className="menu-item rounded-lg">
               <Link
-                href={item.href}
-                title={item.title}
+                href={item[lang].href}
+                title={item[lang].title}
                 onClick={(e) => sideBar.toggleSubMenu(e)}
                 className="p-2 hover:text-blue-700 flex items-center justify-between "
               >
-                {item.title}
+                {item[lang].title}
                 {item?.subMenu && (
                   <FaPlus className="plus-icon transition-all duration-200" />
                 )}

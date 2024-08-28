@@ -1,10 +1,32 @@
 [
-  { "title": "หน้าแรก", "href": "" },
-  { "title": "เกี่ยวกับเรา", "href": "about-us" },
-  { "title": "บริการ", "href": "service" },
-
-  { "title": "บทความ", "href": "news-activity" },
-  { "title": "ร่วมงานกับเรา", "href": "career" },
-
-  { "title": "ติดต่อเรา", "href": "contact" }
+  {
+    "th": { "title": "หน้าแรก", "href": "" },
+    "en": { "title": "Home", "href": "" },
+    "ja": { "title": "ホーム", "href": "" }
+  },
+  {
+    "th": { "title": "เกี่ยวกับเรา", "href": "about-us" },
+    "en": { "title": "About Us", "href": "about-us" },
+    "ja": { "title": "私たちに関しては", "href": "about-us" }
+  },
+  {
+    "th": { "title": "บริการ", "href": "service" },
+    "en": { "title": "Services", "href": "service" },
+    "ja": { "title": "サービス", "href": "service" }
+  },
+  {
+    "th": { "title": "บทความ", "href": "news-activity" },
+    "en": { "title": "Articles", "href": "news-activity" },
+    "ja": { "title": "記事", "href": "news-activity" }
+  },
+  {
+    "th": { "title": "ร่วมงานกับเรา", "href": "career" },
+    "en": { "title": "Careers", "href": "career" },
+    "ja": { "title": "採用情報", "href": "career" }
+  },
+  {
+    "th": { "title": "ติดต่อเรา", "href": "contact" },
+    "en": { "title": "Contact Us", "href": "contact" },
+    "ja": { "title": "お問い合わせ", "href": "contact" }
+  }
 ]
