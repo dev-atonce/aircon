@@ -1,5 +1,13 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // skipTrailingSlashRedirect: true,
+  // i18n: {
+  //   locales: ['th', 'en'],
+  //   defaultLocale: 'th',
+  //   localeDetection: false,
+  // },
+  //  serializeConfig: false,
+  // trailingSlash: false,
   images: {
     remotePatterns: [
       {

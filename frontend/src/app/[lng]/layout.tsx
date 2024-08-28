@@ -58,7 +58,7 @@ export default async function RootLayout({
 }) {
   const logos = await fetchLogo();
   const contact = await fetchContact();
-
+  console.log(lng)
   return (
     <html lang={lng} dir={dir(lng)}>
       <ConfigProvider
