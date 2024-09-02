@@ -56,34 +56,63 @@ export default async function ContactPage({ params }: Props) {
           <div className="flex flex-col gap-2 col-span-2 lg:col-span-1">
             <div className="flex flex-col gap-2 ">
               <div className="py-4 border-b border-slate-300">
-                <h5 className="text-2xl font-semibold ">
+                <h2 className="text-2xl font-semibold ">
                   {contact[`name${lang}`]}
-                </h5>
+                </h2>
                 <p>{contact[`address${lang}`]}</p>
               </div>
               <div className="py-4 ">
-                <h5 className="text-2xl font-semibold ">
+                <h3 className="text-2xl font-semibold ">
                   {t("contact.title")}
-                </h5>
+                </h3>
                 <p>
-                  {t("contact.telephone")} :{contact?.telephone}{" "}
+                  {t("contact.telephone")} :{contact?.telephone}
+                </p>
+                <p>
+                  {t("contact.fax")} : {contact?.fax}
                 </p>
                 <p>
                   {t("contact.email")} : {contact?.email}
                 </p>
-                <p>{t("contact.line")} : {contact?.line}</p>
               </div>
             </div>
           </div>
-          <div className="col-span-2 lg:col-span-1 ">
-            <h6 className="text-xl font-semibold text-slate-600">
-              {t("contact.contact-form")}
-            </h6>
-            <Contactform lang={params.lng}/>
+          <div className="flex flex-col gap-2 col-span-2 lg:col-span-1">
+            <div className="flex flex-col gap-2 ">
+              <div className="py-4 border-b border-slate-300">
+                <h2 className="text-2xl font-semibold ">
+                  {contact[`name2${lang}`]}
+                </h2>
+                <p>{contact[`address2${lang}`]}</p>
+              </div>
+              <div className="py-4 ">
+                <h3 className="text-2xl font-semibold ">
+                  {t("contact.title")}
+                </h3>
+                <p>
+                  {t("contact.telephone")} :{contact?.telephone2}
+                </p>
+                <p>
+                  {t("contact.fax")} : {contact?.fax2}
+                </p>
+                <p>
+                  {t("contact.email")} : {contact?.email2}
+                </p>
+              </div>
+            </div>
           </div>
-        </div>
-        <div className="py-6">
-          <div dangerouslySetInnerHTML={{ __html: contact?.gMap }}></div>
+          <div className="py-6">
+            <div dangerouslySetInnerHTML={{ __html: contact?.gMap }}></div>
+          </div>
+          <div className="py-6">
+            <div dangerouslySetInnerHTML={{ __html: contact?.gMap2 }}></div>
+          </div>
+          <div className="col-span-2 lg:col-span-2 lg:px-40 px-0 ">
+            <h2 className="text-xl font-semibold text-slate-600">
+              {t("contact.contact-form")}
+            </h2>
+            <Contactform lang={params.lng} />
+          </div>
         </div>
       </div>
     </>

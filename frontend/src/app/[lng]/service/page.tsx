@@ -3,6 +3,8 @@ import Loading from "@/components/main/Loading/Loading";
 import TopSection from "@/components/main/TopSection/TopSection";
 import ServiceSection from "@/components/main/ServiceSection/ServiceSection";
 import { Metadata, ResolvingMetadata } from "next";
+import MoreInfo from "@/components/main/MoreInfo/MoreInfo";
+
 
 const pageName = "service";
 
@@ -42,17 +44,13 @@ export default function ServicePage({ params }: Props) {
         lang={params.lng}
       />
       <div className="container mx-auto py-4">
-        <TopSection lang={lang} />
+        <TopSection lang={params.lng} />
+        <h2 className="text-2xl font-semibold text-slate-800 text-start mb-4">
+          บริการของเรา
+        </h2>
         <ServiceSection lang={lang} />
       </div>
-      <div className="bg-slate-100">
-        <div className="container mx-auto flex flex-col items-center py-12">
-          <h4 className=" text-[#E61717] p-2 text-2xl">
-            สอบถามรายละเอียดเพิ่มเติม
-          </h4>
-          <h4 className="text-2xl text-slate-800">035-258-341-4 ต่อ 23</h4>
-        </div>
-      </div>
+      <MoreInfo lang={lang} />
     </>
   );
 }

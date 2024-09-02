@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { FaPlus, FaFacebookF, FaYoutube, FaLine } from "react-icons/fa";
+import LanguageSelect from "../LanguageSelect/LanguageSelect";
 import menuItem from "./menuItem.json";
 
 export default function SideBar({ sideBar, lang }: any) {
@@ -42,7 +43,12 @@ export default function SideBar({ sideBar, lang }: any) {
             </li>
           ))}
         </ul>
+        <div className="flex justify-start w-full pl-4">
+          {/* @ts-ignore */}
+          <LanguageSelect lng={lang} />
+        </div>
       </div>
+
       <div className="fixed bottom-0 flex justify-between w-full max-w-90 p-4">
         <div>
           <div className="flex social-icon">

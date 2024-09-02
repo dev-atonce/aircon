@@ -14,6 +14,7 @@ export default function NavBar({ lang }: { lang: string }) {
                 title={item[lang].title}
                 dropdownItems={item[lang].subMenu}
                 sectionKey={key}
+                lng={lang}
               />
             );
           else

@@ -42,10 +42,10 @@ export default function NewsPage({ params }: Props) {
         lang={params.lng}
       />
       <div className="container mx-auto">
-        <TopSection lang={lang} />
-        <h4 className="text-2xl font-semibold text-slate-800">
+        <TopSection lang={params.lng} />
+        <h2 className="text-2xl font-semibold text-slate-800">
           ข่าวสาร / กิจกรรม
-        </h4>
+        </h2>
         <BlogSection
           limit={12}
           typeBlog={["general", "customer", "selfedit"]}

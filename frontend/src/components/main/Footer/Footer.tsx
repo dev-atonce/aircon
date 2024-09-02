@@ -3,6 +3,7 @@ import { useContext } from "react";
 import { Logo } from "../Logo/Logo";
 import { PageSettingContext } from "@/contexts/PageSettingContext";
 import Link from "next/link";
+import { useTranslation } from "@/app/i18n/client";
 
 import { FaPhone } from "react-icons/fa6";
 
@@ -14,9 +15,12 @@ import menuItem from "@/components/main/Header/menuItem.json";
 
 export default function Footer({ logo, contact, lang }: any) {
   const { primaryColor }: any = useContext(PageSettingContext);
+  const { t } = useTranslation(lang);
 
   let currentDate = new Date();
   let currentYear = currentDate.getFullYear();
+
+  const lng = lang.toUpperCase();
 
   return (
     <div className="text-white bg-[#070B76] ">
@@ -43,16 +47,11 @@ export default function Footer({ logo, contact, lang }: any) {
         </div>
       </div>
       <div className="container mx-auto pt-4">
-        <div className="flex justify-start  flex-col lg:flex-row lg:justify-between lg:gap-20  ">
+        <div className="flex justify-start  flex-col lg:flex-row lg:justify-between lg:gap-20 mb-4 ">
           <div className="flex flex-col justify-center items-center lg:items-start lg:basis-1/2  ">
             <div className="flex-col flex items-center lg:items-start gap-3 pb-6  ">
-              <p className="">{contact?.addressTH}</p>
-              <p className="text-sm">
-                บริษัทฯ
-                ได้รับการส่งเสริมการลงทุนในการผลิตชิ้นส่วนอะไหล่แอร์และเครื่องทำความเย็น
-                สำหรับการส่งออกและขายในประเทศรวมถึงการได้รับการรับรองทางด้านคุณภาพ
-                ISO 9001 และ ISO14001 ทุนจดทะเบียนโดยชาวญี่ปุ่น
-              </p>
+              <span className="text-lg font-bold">{contact[`name${lng}`]}</span>
+              <p className="">{contact[`address${lng}`]}</p>
             </div>
           </div>
 
@@ -60,15 +59,59 @@ export default function Footer({ logo, contact, lang }: any) {
             <div className="xl:basis-3/4 w-full sm:basis-3/5 hidden sm:block">
               <div className="flex flex-col gap-2 mb-3">
                 <label className="flex items-center gap-1">
-                  <div className="w-2 bg-slate-300 h-4"></div>Contact
+                  <div className="w-2 bg-slate-300 h-4"></div>
+                  {t("page.contact-us")}
                 </label>
                 <div>
                   <a href="" className="flex items-center gap-2">
                     <FaPhone />
                     <span>{contact?.telephone}</span>
                   </a>
+                  <a href="" className="flex items-center gap-2">
+                    <FaPhone />
+                    <span>{contact?.fax}</span>
+                  </a>
                   <a
                     href={`mailto:${contact?.email}`}
+                    className="flex items-center gap-2"
+                  >
+                    <MdEmail size={20} />
+                    <span>{contact?.email}</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="flex justify-start  flex-col lg:flex-row lg:justify-between lg:gap-20  ">
+          <div className="flex flex-col justify-center items-center lg:items-start lg:basis-1/2  ">
+            <div className="flex-col flex items-center lg:items-start gap-3 pb-6  ">
+              <span className="text-lg font-bold">
+                {contact[`name2${lng}`]}
+              </span>
+              <p className="">{contact[`address2${lng}`]}</p>
+              <p className="text-sm">{t("footer.message")}</p>
+            </div>
+          </div>
+
+          <div className="flex lg:basis-1/2 sm:flex-row flex-col items-start ">
+            <div className="xl:basis-3/4 w-full sm:basis-3/5 hidden sm:block">
+              <div className="flex flex-col gap-2 mb-3">
+                <label className="flex items-center gap-1">
+                  <div className="w-2 bg-slate-300 h-4"></div>
+                  {t("page.contact-us")}
+                </label>
+                <div>
+                  <a href="" className="flex items-center gap-2">
+                    <FaPhone />
+                    <span>{contact?.telephone2}</span>
+                  </a>
+                  <a href="" className="flex items-center gap-2">
+                    <FaPhone />
+                    <span>{contact?.fax2}</span>
+                  </a>
+                  <a
+                    href={`mailto:${contact?.email2}`}
                     className="flex items-center gap-2"
                   >
                     <MdEmail size={20} />

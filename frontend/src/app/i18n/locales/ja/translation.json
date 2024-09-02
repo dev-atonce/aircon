@@ -11,12 +11,20 @@
 
   "cover": {
     "title": "AIR-CON PARTS ENGINEERING (THAILAND) COMPANY LIMITED",
-    "caption": "Manufacture and distribute air conditioning and refrigeration spare parts."
+    "caption": "Manufacture and distribute air conditioning and refrigeration spare parts.",
+    "description": "Air conditioner and refrigeration parts for export and domestic sales."
+  },
+
+  
+
+  "service": {
+    "more-info": "More Information"
   },
 
   "contact": {
     "title": "Contact Us",
     "telephone": "Tel",
+    "fax": "Fax",
     "email": "Email",
     "line": "ID Line",
     "contact-form": "Contact Form"
@@ -26,7 +34,11 @@
     "name": "Name",
     "email": "Email",
     "telephone": "Tel",
+
     "detail": "Detail",
     "place": "Location"
+  },
+  "footer": {
+    "message": "บริษัทฯได้รับการส่งเสริมการลงทุนในการผลิตชิ้นส่วนอะไหล่แอร์และเครื่องทำความเย็นสำหรับการส่งออกและขายในประเทศรวมถึงการได้รับการรับรองทางด้านคุณภาพISO 9001 และ ISO14001 ทุนจดทะเบียนโดยชาวญี่ปุ่น"
   }
 }

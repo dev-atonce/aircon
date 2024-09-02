@@ -6,6 +6,7 @@ import { PageSettingContext } from "@/contexts/PageSettingContext";
 import Image from "next/image";
 import SideBar from "./SideBar";
 import NavBar from "./NavBar";
+import LanguageSelect from "../LanguageSelect/LanguageSelect";
 
 export default function Header({ logo, contact, lang }: any) {
   const [currentLanguage, setCurrentLanguage] = useState<string>("th");
@@ -106,6 +107,10 @@ export default function Header({ logo, contact, lang }: any) {
                       height={25}
                     />
                   </a>
+                </div>
+                <div className="hidden xl:block pl-2">
+                  {/* @ts-ignore */}
+                  <LanguageSelect lng={lang} />
                 </div>
               </div>
             </div>

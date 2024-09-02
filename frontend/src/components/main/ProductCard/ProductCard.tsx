@@ -18,9 +18,9 @@ export default function ProductCard({ item, lang }: any) {
         className="w-full object-cover aspect-[3/2] group-hover:brightness-105 transition-all"
         loading="lazy"
       />
-      <div className="px-4 group-hover:text-[#070B76] pt-2 text-start text-lg transition-all">
-        {item[`serviceName${lang}`]}
-      </div>
+      <h3 className="px-4 group-hover:text-[#070B76] pt-2 text-start text-lg transition-all">
+        {item[`serviceName${lang}`] || item?.serviceNameTH}
+      </h3>
     </Link>
   );
 }

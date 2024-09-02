@@ -42,8 +42,8 @@ export default function CareerPage({ params }: Props) {
         lang={params.lng}
       />
       <div className="container mx-auto">
-        <TopSection lang={lang} />
-        <h4 className="text-2xl font-semibold text-slate-800">ร่วมงานกับเรา</h4>
+        <TopSection lang={params.lng} />
+        <h2 className="text-2xl font-semibold text-slate-800">ร่วมงานกับเรา</h2>
         <BlogSection
           limit={8}
           typeBlog={["recruitment"]}

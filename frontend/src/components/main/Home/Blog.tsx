@@ -9,7 +9,7 @@ export default function Blog({ lang }: BlogProps) {
   return (
     <div className="border-slate-200 py-12 ">
       <div className="flex items-center justify-between">
-        <h4 className="text-slate-800 text-2xl font-semibold">บทความ</h4>
+        <h2 className="text-slate-800 text-2xl font-semibold">บทความ</h2>
       </div>
       <div className="py-6">
         <BlogSection

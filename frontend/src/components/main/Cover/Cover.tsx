@@ -24,9 +24,9 @@ export default function Cover({ pageName, prevPage, lang }: CoverProps) {
           priority={true}
         />
         <div className="absolute top-4 xl:top-14 left-[50%] translate-x-[-50%] flex flex-col items-center text-white">
-          <h2 className=" text-xl lg:text-4xl font-semibold ">
+          <h1 className=" text-xl lg:text-4xl font-semibold ">
             {t(`${pageName}`)}
-          </h2>
+          </h1>
           <p className="text-xl hidden lg:block">{t("cover.title")}</p>
           <p className=" hidden lg:block">{t("cover.caption")}</p>
         </div>
