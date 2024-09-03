@@ -16,7 +16,7 @@ const configMail = {
 
 const mailMessage = (mailTo, subject, template) => {
     let messageMail = {
-        from: `"Speedmove INQUIRY" <${config.mailDefault}>`,
+        from: `"Website INQUIRY" <${config.mailDefault}>`,
         to: mailTo,
         subject: subject,
         html: template,
@@ -27,7 +27,7 @@ const mailMessage = (mailTo, subject, template) => {
 let MailGenerator = new Mailgen({
     theme: 'salted',
     product: {
-        name: 'Speedmove',
+        name: 'Air-Con Parts Engineering Thailand',
         link: 'https://mailgen.js/'// this can be change according to your requirement
     }
 });
@@ -63,6 +63,10 @@ const methods = {
                             {
                                 '#': 'Telephone',
                                 detail: req.body.telephone,
+                            },
+                            {
+                                '#': 'Place',
+                                detail: req.body.place,
                             },
                             {
                                 '#': 'Details',

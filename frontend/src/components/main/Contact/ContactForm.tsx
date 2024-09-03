@@ -1,18 +1,58 @@
 "use client";
 
-import { useForm } from "react-hook-form";
 import { useTranslation } from "@/app/i18n/client";
+import { useEffect } from "react";
+import { useForm } from "react-hook-form";
+import Swal from "sweetalert2";
 
-export default function Contactform({lang}: {lang: string}) {
+export default function Contactform({ lang }: { lang: string }) {
   const {
+    reset,
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isSubmitSuccessful },
   } = useForm();
 
-  const onSubmit = (data: any) => {
+  const onSubmit = async (data: any) => {
     const contactData = { ...data };
+
+    const response = await fetch(
+      `${process.env.NEXT_PUBLIC_BACK_END_URL}/api/v1/page/contact-forms`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(contactData),
+      }
+    );
+
+    if (!response.ok) {
+      Swal.fire({
+        position: "top",
+        toast: true,
+        icon: "error",
+        title: `${t("contact-form.error")}`,
+        showConfirmButton: false,
+        timer: 2000,
+      });
+    } else {
+      Swal.fire({
+        position: "top",
+        toast: true,
+        icon: "success",
+        title: `${t("contact-form.success")}`,
+        showConfirmButton: false,
+        timer: 2000,
+      });
+    }
   };
+
+  useEffect(() => {
+    if (isSubmitSuccessful) {
+      reset();
+    }
+  }, [isSubmitSuccessful, reset]);
 
   const { t } = useTranslation(lang);
 
@@ -28,50 +68,60 @@ export default function Contactform({lang}: {lang: string}) {
 
         <div className="col-span-2 md:col-span-1">
           <input
-            {...register("contactPerson", { required: true, maxLength: 100 })}
+            {...register("contactName", { required: true, maxLength: 100 })}
             type="text"
-            placeholder={t('contact-form.name')}
+            placeholder={t("contact-form.name")}
             className="bg-white w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
           />
-          {errors?.contactPerson?.type === "required" && (
-            <p className="text-xs text-red text-end">This field is required.</p>
+          {errors?.contactName?.type === "required" && (
+            <p className="text-xs text-red text-end">
+              {t("contact-form.validate.require")}
+            </p>
           )}
         </div>
         <div className="col-span-2 md:col-span-1">
           <input
             {...register("place", { required: true, maxLength: 100 })}
             type="text"
-            placeholder={t('contact-form.place')}
+            placeholder={t("contact-form.place")}
             className="bg-white w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
           />
           {errors?.place?.type === "required" && (
-            <p className="text-xs text-red text-end">This field is required.</p>
+            <p className="text-xs text-red text-end">
+              {t("contact-form.validate.require")}
+            </p>
           )}
         </div>
         <div className="col-span-2 md:col-span-1">
           <input
-            {...register("contactEmail", { required: true, maxLength: 100 })}
+            {...register("email", { required: true, maxLength: 100 })}
             type="email"
-            placeholder={t('contact-form.email')}
+            placeholder={t("contact-form.email")}
             className="bg-white w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
           />
 
-          {errors?.contactEmail?.type === "required" && (
-            <p className="text-xs text-red text-end">This field is required.</p>
+          {errors?.email?.type === "required" && (
+            <p className="text-xs text-red text-end">
+              {t("contact-form.validate.require")}
+            </p>
           )}
         </div>
         <div className="col-span-2 md:col-span-1">
           <input
-            {...register("phone", { pattern: /[\d+]/g, required: true })}
+            {...register("telephone", { pattern: /[\d+]/g, required: true })}
             type="text"
-            placeholder={t('contact-form.telephone')}
+            placeholder={t("contact-form.telephone")}
             className="bg-white w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
           />
-          {errors?.phone?.type === "pattern" && (
-            <p className="text-xs text-red text-end">Phone Numbers Only</p>
+          {errors?.telephone?.type === "pattern" && (
+            <p className="text-xs text-red text-end">
+              {t("contact-form.validate.number")}
+            </p>
           )}
-          {errors?.phone?.type === "required" && (
-            <p className="text-xs text-red text-end">This field is required.</p>
+          {errors?.telephone?.type === "required" && (
+            <p className="text-xs text-red text-end">
+              {t("contact-form.validate.require")}
+            </p>
           )}
         </div>
 
@@ -79,11 +129,13 @@ export default function Contactform({lang}: {lang: string}) {
           <textarea
             {...register("detail", { required: true })}
             rows={3}
-            placeholder={t('contact-form.detail')}
+            placeholder={t("contact-form.detail")}
             className="bg-white w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
           />
           {errors?.detail?.type === "required" && (
-            <p className="text-xs text-red text-end">This field is required.</p>
+            <p className="text-xs text-red text-end">
+              {t("contact-form.validate.require")}
+            </p>
           )}
         </div>
         <div className="flex justify-start gap-4 col-span-2 ">

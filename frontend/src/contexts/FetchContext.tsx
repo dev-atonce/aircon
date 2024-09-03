@@ -112,7 +112,7 @@ export default function FetchProvider({ children, user, token }: any) {
     try {
       const response = await fetch(route, {
         headers: {
-          Authorization: `Bearer ${token}`,
+          authorization: `Bearer ${token}`,
         },
       });
 
@@ -222,7 +222,6 @@ export default function FetchProvider({ children, user, token }: any) {
                 method: method?.toUpperCase(),
                 headers: {
                   "Content-Type": "application/json",
-
                   authorization: `Bearer ${token}`,
                 },
                 body: JSON.stringify(modifiedData),

@@ -34,9 +34,17 @@
     "name": "Name",
     "email": "Email",
     "telephone": "Tel",
-
     "detail": "Detail",
-    "place": "Location"
+    "place": "Location",
+
+    "success": "Send message success",
+    "error": "Something wrong, Please try again later",
+
+    "validate":{
+      "require": "This field is required",
+      "email": "Email incorrect",
+      "number" : "Number Only"
+    }
   },
   "footer": {
     "message": "บริษัทฯได้รับการส่งเสริมการลงทุนในการผลิตชิ้นส่วนอะไหล่แอร์และเครื่องทำความเย็นสำหรับการส่งออกและขายในประเทศรวมถึงการได้รับการรับรองทางด้านคุณภาพISO 9001 และ ISO14001 ทุนจดทะเบียนโดยชาวญี่ปุ่น"
