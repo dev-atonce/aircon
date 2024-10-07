@@ -121,7 +121,8 @@ export default function Footer({ logo, contact, lang }: any) {
               </div>
               <div className="flex flex-col gap-2">
                 <label className="flex items-center gap-1">
-                  <div className="w-2 bg-slate-300 h-4"></div>Social
+                  <div className="w-2 bg-slate-300 h-4"></div>{" "}
+                  {t("page.social")}
                 </label>
                 <div className="flex items-center gap-6">
                   <a href={contact?.facebook}>

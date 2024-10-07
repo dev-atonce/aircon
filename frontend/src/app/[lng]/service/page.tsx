@@ -4,7 +4,15 @@ import TopSection from "@/components/main/TopSection/TopSection";
 import ServiceSection from "@/components/main/ServiceSection/ServiceSection";
 import { Metadata, ResolvingMetadata } from "next";
 import MoreInfo from "@/components/main/MoreInfo/MoreInfo";
+import dynamic from "next/dynamic";
 
+// const ServiceSection = dynamic(
+//   () => import("@/components/main/ServiceSection/ServiceSection"),
+//   { ssr: false }
+// );
+// const MoreInfo = dynamic(() => import("@/components/main/MoreInfo/MoreInfo"), {
+//   ssr: false,
+// });
 
 const pageName = "service";
 
@@ -33,8 +41,19 @@ export async function generateMetadata(
   };
 }
 
-export default function ServicePage({ params }: Props) {
+const fetchService = async () => {
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_BACK_END_URL}/api/v1/page/service`,
+    { cache: "no-store" }
+  );
+
+  const result = await res.json();
+  return result.rows;
+};
+
+export default async function ServicePage({ params }: Props) {
   const lang = params.lng.toUpperCase();
+  const services = await fetchService();
   return (
     <>
       <Loading />
@@ -45,10 +64,8 @@ export default function ServicePage({ params }: Props) {
       />
       <div className="container mx-auto py-4">
         <TopSection lang={params.lng} />
-        <h2 className="text-2xl font-semibold text-slate-800 text-start mb-4">
-          บริการของเรา
-        </h2>
-        <ServiceSection lang={lang} />
+
+        <ServiceSection lang={lang} services={services} page={true} />
       </div>
       <MoreInfo lang={lang} />
     </>

@@ -25,7 +25,6 @@ export default function TopSecton({ lang }: TopProps) {
         <span className="bg-[#070B76] text-white p-2 inline rounded xl:text-2xl">
           AIR-CON PARTS ENGINEERING (THAILAND) CO., LTD.
         </span>
-
         <span className="text-2xl">{t("cover.caption")}</span>
         <p>{t("cover.description")}</p>
       </div>

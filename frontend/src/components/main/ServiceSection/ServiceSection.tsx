@@ -1,21 +1,20 @@
+"use client";
 import ProductCard from "../ProductCard/ProductCard";
-
-const fetchData = async () => {
-  const res = await fetch(
-    `${process.env.NEXT_PUBLIC_BACK_END_URL}/api/v1/page/service`,
-    { cache: "no-store" }
-  );
-
-  const result = await res.json();
-  return result.rows;
-};
-
-export default async function ServiceSection({ lang }: any) {
-  const services = await fetchData();
+import { useTranslation } from "next-i18next";
+export default function ServiceSection({ lang, services, page }: any) {
+  const { t } = useTranslation(lang);
   return (
     <div className="">
+      {page && (
+        <h2 className="text-2xl font-semibold text-slate-800 text-start mb-4">
+          {t("page.service")}
+        </h2>
+      )}
+
       <div className="grid grid-cols-12 gap-4">
-        {services?.map((i: any, k: any) => <ProductCard item={i} key={k} lang={lang} />)}
+        {services?.map((i: any, k: any) => (
+          <ProductCard item={i} key={k} lang={lang} />
+        ))}
       </div>
     </div>
   );

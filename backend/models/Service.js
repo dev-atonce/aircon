@@ -5,8 +5,10 @@ const schema = new mongoose.Schema(
   {
     serviceNameTH: { type: String },
     serviceNameEN: { type: String },
+    serviceNameJP: { type: String },
     serviceDetailTH: { type: String },
     serviceDetailEN: { type: String },
+    serviceDetailJP: { type: String },
     image: { type: String },
     imageAlt: { type: String },
     gallery: { type: Array },

@@ -17,7 +17,7 @@ const nextConfig = {
       },
       {
         protocol: "https",
-        hostname: "api-speedmove.at-once.info",
+        hostname: "api-aircon.at-once.info",
         port: "",
       },
     ],

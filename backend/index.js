@@ -39,7 +39,8 @@ require("./configs/errorHandler")(config.isProduction, app);
 
 // Start Server
 const server = app
-    .listen(config.port, "127.0.0.1", () => {
+  .listen(config.port, "192.168.0.199", () => {
+    // .listen(config.port, "127.0.0.1", () => {
     // For IpV6
     // .listen(config.port, () => { // For IpV4
     let host = server.address().address;

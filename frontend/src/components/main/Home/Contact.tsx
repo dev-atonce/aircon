@@ -1,7 +1,11 @@
+"use client";
 import Image from "next/image";
 import { BsFillTelephoneFill } from "react-icons/bs";
+import { useTranslation } from "next-i18next";
 
-export default function Contact() {
+export default function Contact({ lang }: any) {
+  const { t } = useTranslation(lang);
+
   return (
     <div className=" py-20 relative bg-[#FAFAFA]">
       <div className="container mx-auto relative">
@@ -9,17 +13,14 @@ export default function Contact() {
           <div className="col-span-6">
             <div className="flex flex-col gap-2 lg:gap-6">
               <h3 className="text-lg lg:text-3xl font-semibold text-slate-700">
-                ขอแค่บอกมาเราจัดให้ถึงบ้าน
-                ยุคนี้ไม่ต้องเสียค่าน้ำมันออกรถมาซื้ออีกแล้ว
+                {t("page.contact-section.title")}
               </h3>
               <p className="text-slate-700 text-sm lg:text-base">
-                อะไหล่เครื่องใช้ไฟฟ้า (แอร์ ตู้เย็น ตู้แช่ เครื่องซักผ้า ฯลฯ)
-                ออนไลน์ครบถ้วน สำหรับ ทุกความต้องการ ของแท้ทุกชิ้น
-                จัดจำหน่ายโดยตัวแทนจำหน่ายอย่าง เป็นทางการ
+                {t("page.contact-section.description")}
               </p>
               <div className="flex flex-col gap-4">
                 <label htmlFor="" className="lg:text-base text-sm">
-                  ติดต่อเรา
+                  {t("contact.title")}
                 </label>
                 <div className="flex gap-2 lg:gap-4">
                   <a

@@ -4,9 +4,19 @@
     "about-us": "About Us",
     "policy": "Policy",
     "service": "Service",
-    "blog": "News / Activity",
+    "blog": "Blog",
     "career": "Career",
-    "contact-us": "Contact Us"
+    "contact-us": "Contact Us",
+    "social": "Social Media",
+    "our-client": "Our Clients",
+    "contact-section": {
+      "title": "Air-Con Parts Engineering (Thailand) Co., Ltd. Produces Stop valves, pipes and accumulators for air-conditioners and refrigeration unit and related parts.",
+      "description": "It has been granted Full promotion privileges by the Board of investment. The highest quality Manufacturing using technology from Japan and professional management skills is Incorporated."
+    }
+  },
+  "button": {
+    "see-all": "See All",
+    "send": "Send"
   },
 
   "cover": {
@@ -16,7 +26,6 @@
   },
 
   "service": {
-    
     "more-info": "More Information"
   },
 
@@ -30,24 +39,25 @@
   },
 
   "contact-form": {
+    "title": "Contact Form",
     "name": "Name",
     "email": "Email",
     "telephone": "Tel",
     "detail": "Detail",
     "place": "Location",
-    
+
     "success": "Send message success",
     "error": "Something wrong, Please try again later",
 
-    "validate":{
+    "validate": {
       "require": "กรุณากรอกข้อมูล",
       "email": "กรุณากรอกอีเมลให้ถูกต้อง",
-      "number" : "ตัวเลขเท่านั้น",
+      "number": "ตัวเลขเท่านั้น",
 
-      "validate":{
+      "validate": {
         "require": "This field is required",
         "email": "Email incorrect",
-        "number" : "Number Only"
+        "number": "Number Only"
       }
     }
   },

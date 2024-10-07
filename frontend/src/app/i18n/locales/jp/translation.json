@@ -1,0 +1,61 @@
+{
+  "page": {
+    "home": "ホーム",
+    "about-us": "私たちに関しては",
+    "policy": "Policy",
+    "service": "サービス",
+    "blog": "記事",
+    "career": "採用情報",
+    "contact-us": "お問い合わせ",
+    "social": "ソーシャルメディア",
+    "our-client": "当社の顧客の中には、",
+    "contact-section": {
+      "title": "Air-Con Parts Engineering (Thailand) Co., Ltd. は、エアコンおよび冷凍機用のストップバルブ、パイプ、アキュムレータおよび関連部品を生産しています。",
+      "description": "投資委員会から完全なプロモーション特権が付与されています。日本の技術とプロの管理技術を駆使した最高品質のものづくりが組み込まれています。"
+    }
+  },
+  "button": {
+    "see-all": "すべて見る",
+    "send": "送る"
+  },
+
+  "cover": {
+    "title": "AIR-CON PARTS ENGINEERING (THAILAND) COMPANY LIMITED",
+    "caption": "空調および冷凍装置のスペアパーツを製造および販売します。",
+    "description": "エアコン・冷凍部品の輸出および国内販売。"
+  },
+
+  "service": {
+    "more-info": "さらに詳しい情報"
+  },
+
+  "contact": {
+    "title": "お問い合わせ",
+    "telephone": "Tel",
+    "fax": "Fax",
+    "email": "Email",
+    "line": "ID Line",
+    "contact-form": "Contact Form"
+  },
+
+  "contact-form": {
+    "title": "お問い合わせフォーム",
+    "name": "名前",
+    "email": "電子メール",
+    "telephone": "電話番号",
+    "detail": "詳細",
+    "place": "位置",
+
+    "success": "Send message success",
+    "error": "Something wrong, Please try again later",
+
+    "validate": {
+      "require": "この項目は必須です",
+      "email": "メールアドレスが間違っています",
+      "number": "数字のみ"
+    }
+  },
+  "footer": {
+    "message": "同社は、輸出と国内販売の両方で、エアコンおよび冷凍部品の生産のための投資促進を受けています。さらに、同社は ISO 9001 および ISO 14001 規格による品質管理の認証を取得しています。登録資本金は日本の投資家によって提供されます。"
+  }
+}

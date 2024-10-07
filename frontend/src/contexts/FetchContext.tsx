@@ -718,6 +718,7 @@ export default function FetchProvider({ children, user, token }: any) {
         onSort,
         onDelete,
         onDeleteGallery,
+        token,
       }}
     >
       {children}

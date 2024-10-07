@@ -67,12 +67,13 @@ const BlogCard = ({ data, type, lang }: BlogCardProps) => {
               >
                 {type?.includes("project")
                   ? item[`projectName${lang}`]
-                  : item[`title${lang}`]}
+                  : item[`title${lang.toUpperCase()}`] || item?.titleTH}
               </h3>
               {/* <Divider className="mt-3 mb-2" /> */}
               {!type?.includes("recruitment") && (
                 <p className="line-clamp-2 h-11 text-slate-600">
-                  {item[`description${lang}`]}
+                  {item[`description${lang?.toUpperCase()}`] ||
+                    item?.descriptionTH}
                 </p>
               )}
             </div>

@@ -1,9 +1,14 @@
+"use client";
 import Image from "next/image";
-export default function Client({ data }: any) {
+import { useTranslation } from "next-i18next";
+
+export default function Client({ data, lang }: any) {
+  const { t } = useTranslation(lang);
+
   return (
     <div className="mt-6 sm:mt-14 pt-6 sm:pb-14 sm:pt-20 relative project border-b border-1 border-slate-300">
       <h2 className="text-2xl font-semibold text-slate-800">
-        ลูกค้าส่วนหนึ่งของเรา
+        {t("page.our-client")}
       </h2>
       <div className="grid grid-cols-12 gap-4 py-4">
         {data?.map((i: any, k: any) => (

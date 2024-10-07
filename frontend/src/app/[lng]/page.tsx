@@ -59,12 +59,23 @@ const fetchAbout = async () => {
   return data;
 };
 
+const fetchService = async () => {
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_BACK_END_URL}/api/v1/page/service`,
+    { cache: "no-store" }
+  );
+
+  const result = await res.json();
+  return result.rows;
+};
+
 export default async function Home({ params }: Props) {
   const lang = params.lng?.toUpperCase();
   const banner = await fetchBanner();
   const client = await fetchClient();
   const about = await fetchAbout();
-  
+  const services = await fetchService();
+
   return (
     <>
       <Loading />
@@ -73,17 +84,23 @@ export default async function Home({ params }: Props) {
       <CoverSwiper banner={banner} />
       <div className="container mx-auto">
         {/* About Us */}
-        <About content={about[`aboutUs${lang}`]} />
+        <About content={about[`aboutUs${lang}`]} lang={lang} />
         {/* Service */}
-        <Service lang={lang} />
+        <Service lang={lang} services={services} />
       </div>
       {/* About Us 2 */}
       <Contact />
-      <div className="container mx-auto">
+      <div className="container mx-auto" lang={lang}>
         {/*Customer*/}
-        <Client data={client} />
+        <Client data={client} lang={lang} />
         {/* Blog */}
         <Blog lang={lang} />
+        {/* <iframe
+          src="https://kyoudoh.com/"
+          width="100%"
+          height="500px"
+          title="W3Schools Free Online Web Tutorials"
+        ></iframe> */}
       </div>
     </>
   );

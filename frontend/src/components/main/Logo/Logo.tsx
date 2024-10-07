@@ -3,7 +3,6 @@ import Image from "next/image";
 import "../../../css/Custom.scss";
 
 export function Logo({ color, img }: any) {
-
   return (
     <div className="">
       <Link href="/" className="_links">
@@ -11,8 +10,8 @@ export function Logo({ color, img }: any) {
           <Image
             src={`${process.env.NEXT_PUBLIC_BASE_URL}${img}`}
             alt="rent"
-            width={300}
-            height={400}
+            width={200}
+            height={200}
           />
         )}
       </Link>

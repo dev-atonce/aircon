@@ -9,7 +9,7 @@ import { FetchContext } from "@/contexts/FetchContext";
 import CoverRecord from "./CoverRecord";
 import ContactFormRecord from "./ContactFormRecord";
 import ClientRecord from "./ClientRecord";
-
+import { LogInContext } from "@/contexts/LogInContext";
 const TableThree = ({
   data,
   col,
@@ -25,6 +25,8 @@ const TableThree = ({
     onChangeStatus: onStatus,
     onSort,
   }: any = useContext(FetchContext);
+  const { user }: any = useContext(LogInContext);
+  const usersForAdmin = data?.filter((i: any) => i?.role !== "super");
   const dragItem = useRef(null);
   const dragOverItem = useRef(null);
 
@@ -148,7 +150,19 @@ const TableThree = ({
                 <LogRecord i={i} index={key} modal={modal} key={key} />
               ))}
             {type === "user" &&
+              user?.role === "super" &&
               data?.map((i: any, key: any) => (
+                <UserRecord
+                  key={key}
+                  i={i}
+                  index={key}
+                  modal={modal}
+                  onDelete={onDelete}
+                />
+              ))}
+            {type === "user" &&
+              user?.role === "admin" &&
+              usersForAdmin?.map((i: any, key: any) => (
                 <UserRecord
                   key={key}
                   i={i}

@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function ProductCard({ item, lang }: any) {
   return (
     <Link
-      href={`service/${item?.id}`}
+      href={`/${lang?.toLowerCase()}/service/${item?.id}`}
       className="group   pb-4 transition-all duration-500 col-span-12 md:col-span-6 lg:col-span-4 xl:col-span-3 rounded-lg overflow-hidden"
     >
       <Image

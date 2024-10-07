@@ -143,7 +143,7 @@ export default function Contactform({ lang }: { lang: string }) {
             type="submit"
             className="uppercase px-12 font-bold py-1 bg-[#070B76] rounded-full  text-white "
           >
-            ส่ง
+            {t("button.send")}
           </button>
         </div>
       </form>

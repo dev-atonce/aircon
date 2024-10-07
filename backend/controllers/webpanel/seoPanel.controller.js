@@ -5,10 +5,13 @@ const allowFields = {
   update: [
     "seoTitleTH",
     "seoTitleEN",
+    "seoTitleJP",
     "seoKeywordTH",
     "seoKeywordEN",
+    "seoKeywordJP",
     "seoDescriptionTH",
     "seoDescriptionEN",
+    "seoDescriptionJP",
   ],
 };
 const methods = {

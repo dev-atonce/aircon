@@ -19,7 +19,7 @@ const Breadcrumb = ({ pageName, prevPage, lang }: BreadcrumbProps) => {
               <li>
                 <Link
                   className="text-sm flex items-center "
-                  href={`${lang}/${prevPage?.url}`}
+                  href={`/${lang}/${prevPage?.url}`}
                 >
                   <span>{t(`${prevPage?.pageName}`)}</span>
                   <MdKeyboardArrowRight size={20} />
