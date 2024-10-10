@@ -59,6 +59,7 @@ export default function FormGroup({
               height={i?.height}
               label={i?.label}
               uploadAmount={i?.uploadAmount}
+              key={index}
             />
           ) : i?.type === "dropDown" ? (
             <SelectGroupOne
@@ -67,6 +68,7 @@ export default function FormGroup({
               setState={i?.setState}
               state={i?.state}
               keyProp={i?.keyProp}
+              key={index}
             />
           ) : (
             ""

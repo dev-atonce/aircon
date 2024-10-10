@@ -140,7 +140,6 @@ const CreateTable = (el: any) => {
 
 //================= Begin: Main Component =================//
 const TextEditor = ({
-  key,
   id,
   dataId,
   state,
@@ -936,7 +935,7 @@ const TextEditor = ({
   }, [state]);
 
   return (
-    <div key={key}>
+    <div>
       <ModalDialog
         visible={visible}
         closeHandler={closeHandler}
