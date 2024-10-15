@@ -125,30 +125,36 @@ export default function Footer({ logo, contact, lang }: any) {
                   {t("page.social")}
                 </label>
                 <div className="flex items-center gap-6">
-                  <a href={contact?.facebook}>
-                    <Image
-                      src="/img/fbLogo.png"
-                      alt="soccial"
-                      width={25}
-                      height={25}
-                    />
-                  </a>
-                  <a href={contact?.instagram}>
-                    <Image
-                      src="/img/igLogo.png"
-                      alt="social"
-                      width={25}
-                      height={25}
-                    />
-                  </a>
-                  <a href={contact?.line}>
-                    <Image
-                      src="/img/lineLogo.png"
-                      alt="social"
-                      width={25}
-                      height={25}
-                    />
-                  </a>
+                  {contact?.facebook && (
+                    <a href={contact?.facebook}>
+                      <Image
+                        src="/img/fbLogo.png"
+                        alt="soccial"
+                        width={25}
+                        height={25}
+                      />
+                    </a>
+                  )}
+                  {contact?.instagram && (
+                    <a href={contact?.instagram}>
+                      <Image
+                        src="/img/igLogo.png"
+                        alt="social"
+                        width={25}
+                        height={25}
+                      />
+                    </a>
+                  )}
+                  {contact?.line && (
+                    <a href={`https://line.me/ti/p/~${contact?.line}`}>
+                      <Image
+                        src="/img/lineLogo.png"
+                        alt="social"
+                        width={25}
+                        height={25}
+                      />
+                    </a>
+                  )}
                 </div>
               </div>
             </div>

@@ -28,7 +28,7 @@ const BlogSection = ({
 
   async function blogFetch() {
     const res = await fetch(
-      `https://at-once.info/api/blog/c/rent?type=${typeBlog}&limit=${limit}&skip=${(page - 1) * limit}`
+      `https://at-once.info/api/blog/c/aircon?type=${typeBlog}&limit=${limit}&skip=${(page - 1) * limit}`
     );
     const data = await res.json();
     setBlogList(data.data);

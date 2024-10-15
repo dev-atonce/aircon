@@ -1,27 +1,27 @@
 {
   "page": {
     "home": "ホーム",
-    "about-us": "私たちに関しては",
+    "about-us": "会社案内",
     "policy": "Policy",
     "service": "サービス",
-    "blog": "記事",
+    "blog": "ブログ",
     "career": "採用情報",
     "contact-us": "お問い合わせ",
     "social": "ソーシャルメディア",
-    "our-client": "当社の顧客の中には、",
+    "our-client": "お取引先のご紹介（一部）",
     "contact-section": {
-      "title": "Air-Con Parts Engineering (Thailand) Co., Ltd. は、エアコンおよび冷凍機用のストップバルブ、パイプ、アキュムレータおよび関連部品を生産しています。",
-      "description": "投資委員会から完全なプロモーション特権が付与されています。日本の技術とプロの管理技術を駆使した最高品質のものづくりが組み込まれています。"
+      "title": "Air-Con Parts Engineering (Thailand) Co., Ltd. は、エアコンおよび冷凍機用のストップバルブ、パイプ、アキュムレータなどの関連部品を製造しています。",
+      "description": "タイ投資委員会（BOI）から全面的なプロモーション特権が付与されており、日本の技術とプロフェッショナルな管理体制をもとに、最高品質のものづくりを実現しています。"
     }
   },
   "button": {
     "see-all": "すべて見る",
-    "send": "送る"
+    "send": "送信"
   },
 
   "cover": {
     "title": "AIR-CON PARTS ENGINEERING (THAILAND) COMPANY LIMITED",
-    "caption": "空調および冷凍装置のスペアパーツを製造および販売します。",
+    "caption": "空調設備および冷凍機器用のスペアパーツの製造と販売を行っております。",
     "description": "エアコン・冷凍部品の輸出および国内販売。"
   },
 
@@ -30,7 +30,7 @@
   },
 
   "contact": {
-    "title": "お問い合わせ",
+    "title": "お問い合わせ先",
     "telephone": "Tel",
     "fax": "Fax",
     "email": "Email",
@@ -41,7 +41,7 @@
   "contact-form": {
     "title": "お問い合わせフォーム",
     "name": "名前",
-    "email": "電子メール",
+    "email": "メールアドレス",
     "telephone": "電話番号",
     "detail": "詳細",
     "place": "位置",
@@ -50,12 +50,12 @@
     "error": "Something wrong, Please try again later",
 
     "validate": {
-      "require": "この項目は必須です",
+      "require": "この項目は入力必須です",
       "email": "メールアドレスが間違っています",
-      "number": "数字のみ"
+      "number": "ハイフンを含まず、数字のみで入力してください。"
     }
   },
   "footer": {
-    "message": "同社は、輸出と国内販売の両方で、エアコンおよび冷凍部品の生産のための投資促進を受けています。さらに、同社は ISO 9001 および ISO 14001 規格による品質管理の認証を取得しています。登録資本金は日本の投資家によって提供されます。"
+    "message": "当社は、エアコンおよび冷凍機器用部品の製造において、輸出および国内販売の両方で投資促進を受けています。さらに、品質管理の分野ではISO 9001およびISO 14001の認証を取得済みです。登録資本金は日本の投資家によって出資されています。"
   }
 }

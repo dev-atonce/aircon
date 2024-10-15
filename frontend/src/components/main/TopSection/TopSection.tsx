@@ -22,9 +22,9 @@ export default function TopSecton({ lang }: TopProps) {
         />
       </div>
       <div className="col-span-12 lg:col-span-6 xl:col-span-8 flex gap-4 flex-col items-start">
-        <span className="bg-[#070B76] text-white p-2 inline rounded xl:text-2xl">
+        <h2 className="bg-[#070B76] text-white p-2 inline rounded xl:text-2xl">
           AIR-CON PARTS ENGINEERING (THAILAND) CO., LTD.
-        </span>
+        </h2>
         <span className="text-2xl">{t("cover.caption")}</span>
         <p>{t("cover.description")}</p>
       </div>

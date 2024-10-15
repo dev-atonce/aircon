@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import "../../../css/Custom.scss";
+import "../../../css/custom.scss";
 
 export function Logo({ color, img }: any) {
   return (

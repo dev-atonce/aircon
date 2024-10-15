@@ -2,8 +2,9 @@ import Link from "next/link";
 import { FaPlus, FaFacebookF, FaYoutube, FaLine } from "react-icons/fa";
 import LanguageSelect from "../LanguageSelect/LanguageSelect";
 import menuItem from "./menuItem.json";
+import Image from "next/image";
 
-export default function SideBar({ sideBar, lang }: any) {
+export default function SideBar({ sideBar, lang, contact }: any) {
   return (
     <div className="flex">
       <div
@@ -52,31 +53,36 @@ export default function SideBar({ sideBar, lang }: any) {
       <div className="fixed bottom-0 flex justify-between w-full max-w-90 p-4">
         <div>
           <div className="flex social-icon">
-            <a
-              href="https://www.facebook.com"
-              target="_blank"
-              className="rounded-full p-2 bg-blue-600"
-            >
-              <FaFacebookF fontSize="1.2em" color="white" />
-            </a>
-            <a
-              href="https://line.me/th"
-              target="_blank"
-              className="rounded-full p-2 bg-green-500 ml-1"
-            >
-              <FaLine fontSize="1.2em" color="white" />
-            </a>
-            <a
-              href="https://www.youtube.com"
-              target="_blank"
-              className="rounded-full p-2 bg-red ml-1"
-            >
-              <FaYoutube
-                fontSize="1.2em"
-                color="white"
-                className="bg-red-500"
-              />
-            </a>
+            {contact?.facebook && (
+              <a href={contact?.facebook}>
+                <Image
+                  src="/img/fbLogo.png"
+                  alt="soccial"
+                  width={25}
+                  height={25}
+                />
+              </a>
+            )}
+            {contact?.instagram && (
+              <a href={contact?.instagram}>
+                <Image
+                  src="/img/igLogo.png"
+                  alt="social"
+                  width={25}
+                  height={25}
+                />
+              </a>
+            )}
+            {contact?.line && (
+              <a href={`https://line.me/ti/p/~${contact?.line}`}>
+                <Image
+                  src="/img/lineLogo.png"
+                  alt="social"
+                  width={25}
+                  height={25}
+                />
+              </a>
+            )}
           </div>
         </div>
       </div>

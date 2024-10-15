@@ -20,6 +20,11 @@ const nextConfig = {
         hostname: "api-aircon.at-once.info",
         port: "",
       },
+      {
+        protocol: "https",
+        hostname: "api.aircon-parts.com",
+        port: "",
+      },
     ],
   },
 };

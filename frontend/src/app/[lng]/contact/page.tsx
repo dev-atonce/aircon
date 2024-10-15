@@ -66,7 +66,7 @@ export default async function ContactPage({ params }: Props) {
                   {t("contact.title")}
                 </h3>
                 <p>
-                  {t("contact.telephone")} :{contact?.telephone}
+                  {t("contact.telephone")} : {contact?.telephone}
                 </p>
                 <p>
                   {t("contact.fax")} : {contact?.fax}
@@ -90,7 +90,7 @@ export default async function ContactPage({ params }: Props) {
                   {t("contact.title")}
                 </h3>
                 <p>
-                  {t("contact.telephone")} :{contact?.telephone2}
+                  {t("contact.telephone")} : {contact?.telephone2}
                 </p>
                 <p>
                   {t("contact.fax")} : {contact?.fax2}

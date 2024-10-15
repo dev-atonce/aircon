@@ -5,11 +5,18 @@ import PageSettingProvider from "@/contexts/PageSettingContext";
 import "./globals.css";
 import Header from "@/components/main/Header/Header";
 import Footer from "@/components/main/Footer/Footer";
-import { Kanit } from "next/font/google";
+import { Kanit, Noto_Sans_JP, Noto_Serif_JP } from "next/font/google";
 import { dir } from "i18next";
 import { languages } from "../i18n/settings";
+import { GoogleTagManager } from "@next/third-parties/google";
 
 const roboto = Kanit({
+  weight: ["300", "400", "500", "600", "700", "800"],
+  style: ["normal"],
+  subsets: ["latin"],
+  display: "swap",
+});
+const noto = Noto_Sans_JP({
   weight: ["300", "400", "500", "600", "700", "800"],
   style: ["normal"],
   subsets: ["latin"],
@@ -58,7 +65,7 @@ export default async function RootLayout({
 }) {
   const logos = await fetchLogo();
   const contact = await fetchContact();
-  console.log(lng)
+
   return (
     <html lang={lng} dir={dir(lng)}>
       <ConfigProvider
@@ -70,11 +77,24 @@ export default async function RootLayout({
       >
         <FetchProvider>
           <PageSettingProvider>
-            <body className={roboto.className}>
-              <Header logo={logos?.header?.image} contact={contact} lang={lng} />
+            <body
+              className={
+                lng !== "jp" ? `${roboto.className}` : `${noto.className} `
+              }
+            >
+              <Header
+                logo={logos?.header?.image}
+                contact={contact}
+                lang={lng}
+              />
               {children}
-              <Footer logo={logos?.footer?.image} contact={contact} lang={lng} />
+              <Footer
+                logo={logos?.footer?.image}
+                contact={contact}
+                lang={lng}
+              />
             </body>
+            <GoogleTagManager gtmId="GTM-TG32H5PG" />
           </PageSettingProvider>
         </FetchProvider>
       </ConfigProvider>

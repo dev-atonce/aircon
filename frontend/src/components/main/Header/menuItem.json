@@ -7,21 +7,21 @@
   {
     "th": { "title": "เกี่ยวกับเรา", "href": "about-us" },
     "en": { "title": "About Us", "href": "about-us" },
-    "jp": { "title": "私たちに関しては", "href": "about-us" }
+    "jp": { "title": "会社案内", "href": "about-us" }
   },
   {
     "th": { "title": "บริการ", "href": "service" },
-    "en": { "title": "Services", "href": "service" },
+    "en": { "title": "Service", "href": "service" },
     "jp": { "title": "サービス", "href": "service" }
   },
   {
     "th": { "title": "บทความ", "href": "news-activity" },
-    "en": { "title": "Articles", "href": "news-activity" },
-    "jp": { "title": "記事", "href": "news-activity" }
+    "en": { "title": "Blog", "href": "news-activity" },
+    "jp": { "title": "ブログ", "href": "news-activity" }
   },
   {
     "th": { "title": "ร่วมงานกับเรา", "href": "career" },
-    "en": { "title": "Careers", "href": "career" },
+    "en": { "title": "Career", "href": "career" },
     "jp": { "title": "採用情報", "href": "career" }
   },
   {

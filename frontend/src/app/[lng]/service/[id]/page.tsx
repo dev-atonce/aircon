@@ -16,18 +16,25 @@ const fetchService = async (id: string) => {
   const data = await res.json();
   return data;
 };
-
+const pageName = "service";
 export async function generateMetadata(
   { params }: Props,
   parent: ResolvingMetadata
 ): Promise<Metadata> {
-  const data = await fetchService(params.id);
+  // const data = await fetchService(params.id);
   const lang = params.lng.toUpperCase();
 
+  const seoRoute = `${process.env.NEXT_PUBLIC_BACK_END_URL}/api/v1/page/seo/page-name/${pageName}`;
+
+  // fetch data
+  const data = await fetch(seoRoute, { cache: "no-store" }).then((res) =>
+    res.json()
+  );
+
   return {
-    title: data?.serviceSeo[`title${lang}`],
-    description: data?.serviceSeo[`description${lang}`],
-    keywords: data?.serviceSeo[`keyword${lang}`],
+    title: data[`seoTitle${lang}`],
+    description: data[`seoDescription${lang}`],
+    keywords: data[`seoKeyword${lang}`],
   };
 }
 

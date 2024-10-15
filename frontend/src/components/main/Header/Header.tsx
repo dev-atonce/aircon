@@ -53,7 +53,11 @@ export default function Header({ logo, contact, lang }: any) {
           className={`fixed block lg:none top-0 left-0 h-full w-80 text-black bg-slate-200 transition-transform duration-300 z-40 ${isOpen ? "translate-x-0" : "-translate-x-full"}`}
         >
           <div className="grid content-stretch">
-            <SideBar sideBar={{ toggleSubMenu, closeSideBar }} lang={lang} />
+            <SideBar
+              sideBar={{ toggleSubMenu, closeSideBar }}
+              lang={lang}
+              contact={contact}
+            />
           </div>
         </div>
       </div>
@@ -83,30 +87,36 @@ export default function Header({ logo, contact, lang }: any) {
                 </div>
 
                 <div className="hidden lg:flex items-center justify-end  pb-4 gap-4">
-                  <a href={contact?.facebook}>
-                    <Image
-                      src="/img/fbLogo.png"
-                      alt="soccial"
-                      width={25}
-                      height={25}
-                    />
-                  </a>
-                  <a href={contact?.instagram}>
-                    <Image
-                      src="/img/igLogo.png"
-                      alt="social"
-                      width={25}
-                      height={25}
-                    />
-                  </a>
-                  <a href={contact?.line}>
-                    <Image
-                      src="/img/lineLogo.png"
-                      alt="social"
-                      width={25}
-                      height={25}
-                    />
-                  </a>
+                  {contact?.facebook && (
+                    <a href={contact?.facebook}>
+                      <Image
+                        src="/img/fbLogo.png"
+                        alt="soccial"
+                        width={25}
+                        height={25}
+                      />
+                    </a>
+                  )}
+                  {contact?.instagram && (
+                    <a href={contact?.instagram}>
+                      <Image
+                        src="/img/igLogo.png"
+                        alt="social"
+                        width={25}
+                        height={25}
+                      />
+                    </a>
+                  )}
+                  {contact?.line && (
+                    <a href={`https://line.me/ti/p/~${contact?.line}`}>
+                      <Image
+                        src="/img/lineLogo.png"
+                        alt="social"
+                        width={25}
+                        height={25}
+                      />
+                    </a>
+                  )}
                 </div>
                 <div className="hidden xl:block pl-2">
                   {/* @ts-ignore */}
