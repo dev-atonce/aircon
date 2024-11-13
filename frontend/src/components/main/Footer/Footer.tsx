@@ -115,7 +115,7 @@ export default function Footer({ logo, contact, lang }: any) {
                     className="flex items-center gap-2"
                   >
                     <MdEmail size={20} />
-                    <span>{contact?.email}</span>
+                    <span>{contact?.email2}</span>
                   </a>
                 </div>
               </div>

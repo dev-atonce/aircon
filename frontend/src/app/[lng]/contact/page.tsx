@@ -107,12 +107,12 @@ export default async function ContactPage({ params }: Props) {
           <div className="py-6">
             <div dangerouslySetInnerHTML={{ __html: contact?.gMap2 }}></div>
           </div>
-          <div className="col-span-2 lg:col-span-2 lg:px-40 px-0 ">
+          {/* <div className="col-span-2 lg:col-span-2 lg:px-40 px-0 ">
             <h2 className="text-xl font-semibold text-slate-600">
               {t("contact.contact-form")}
             </h2>
             <Contactform lang={params.lng} />
-          </div>
+          </div> */}
         </div>
       </div>
     </>

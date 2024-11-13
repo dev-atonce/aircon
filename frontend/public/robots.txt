@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://aircon-parts.com
+
+# Sitemaps
+Sitemap: https://aircon-parts.com/sitemap.xml
