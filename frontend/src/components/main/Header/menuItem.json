@@ -20,9 +20,9 @@
     "jp": { "title": "ブログ", "href": "news-activity" }
   },
   {
-    "th": { "title": "ร่วมงานกับเรา", "href": "career" },
-    "en": { "title": "Career", "href": "career" },
-    "jp": { "title": "採用情報", "href": "career" }
+    "th": { "title": "ข่าวสารและกิจกรรม", "href": "career" },
+    "en": { "title": "News & Activity", "href": "career" },
+    "jp": { "title": "ニュース＆活動", "href": "career" }
   },
   {
     "th": { "title": "ติดต่อเรา", "href": "contact" },

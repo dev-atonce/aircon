@@ -42,7 +42,7 @@ export default function NewsPage({ params }: Props) {
         lang={params.lng}
       />
       <div className="container mx-auto">
-        <TopSection lang={params.lng} />
+        {/* <TopSection lang={params.lng} /> */}
        
         <BlogSection
           blogPage={true}

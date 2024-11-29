@@ -63,7 +63,7 @@ export default async function ServicePage({ params }: Props) {
         lang={params.lng}
       />
       <div className="container mx-auto py-4">
-        <TopSection lang={params.lng} />
+        {/* <TopSection lang={params.lng} /> */}
 
         <ServiceSection lang={lang} services={services} page={true} />
       </div>
