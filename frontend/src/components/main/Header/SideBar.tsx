@@ -15,7 +15,8 @@ export default function SideBar({ sideBar, lang, contact }: any) {
           {menuItem.map((item: any, index: any) => (
             <li key={index} className="menu-item rounded-lg">
               <Link
-                href={item[lang].href}
+                // href={item[lang].href}
+                href={`/${lang}/${item[lang].href}`}
                 title={item[lang].title}
                 onClick={(e) => sideBar.toggleSubMenu(e)}
                 className="p-2 hover:text-blue-700 flex items-center justify-between "
