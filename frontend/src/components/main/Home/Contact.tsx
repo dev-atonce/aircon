@@ -2,6 +2,7 @@
 import Image from "next/image";
 import { BsFillTelephoneFill } from "react-icons/bs";
 import { useTranslation } from "next-i18next";
+import Link from "next/link";
 
 export default function Contact({ lang }: any) {
   const { t } = useTranslation(lang);
@@ -121,7 +122,9 @@ export default function Contact({ lang }: any) {
                     Share Holders
                   </div>
                   <div className="col-span-5 md:col-span-4">
+                    <Link href="https://www.chiyoku.jp">
                     Chiyoda Kuchou Kiki Co., Ltd. (CKK) 100% Japan
+                    </Link>
                   </div>
                 </div>
                 <div className="grid gap-4 grid-cols-1 md:grid-cols-6 grid-rows-1 border border-slate-400 px-4 py-6 rounded-lg shadow-md">
