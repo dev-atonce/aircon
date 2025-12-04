@@ -72,14 +72,13 @@ export default function Contact({ lang }: any) {
                   <div className="col-span-5 md:col-span-4">
                     <ol className="">
                       <li>
-                        Ayutthaya Factory : 142 Moo 16 Bangpa-In Industrial
+                        Ayutthaya Factory (Head Office) : 142 Moo 16 Bangpa-In Industrial
                         Estate, Tambon Bangkrasan, Amphur Bangpa-in, Ayutthaya
                         13160, Thailand Tel. 0-3525-8341- 4 Fax 0-35258981
                       </li>
                       <li className="txt-remark">
-                        Chonburi Factory : 48 Moo 2 Tambon Nongkayat, Amphur
-                        Panatnikom, Chonburi 20140 Tel. 0-899014500,
-                        0-89999014501
+                        Chonburi Factory (Branch 2) : 48 Moo 2 Tambon Nongkayat, Amphur
+                        Panatnikom, Chonburi 20140 Tel. 0-899014500, 0-899014501
                       </li>
                     </ol>
                   </div>
@@ -94,14 +93,14 @@ export default function Contact({ lang }: any) {
                   </div>
                 </div>
 
-                <div className="grid gap-4 grid-cols-1 md:grid-cols-6 grid-rows-1 border border-slate-400 px-4 py-6 rounded-lg shadow-md">
+                {/* <div className="grid gap-4 grid-cols-1 md:grid-cols-6 grid-rows-1 border border-slate-400 px-4 py-6 rounded-lg shadow-md">
                   <div className="font-bold flex items-center gap-2 md:col-span-2 md:border-r border-slate-300">
                     Annual Sale (THB)
                   </div>
                   <div className="col-span-5 md:col-span-4">
                     1,255,000,000 (For 2021)
                   </div>
-                </div>
+                </div> */}
 
                 <div className="grid gap-4 grid-cols-1 md:grid-cols-6 grid-rows-1 border border-slate-400 px-4 py-6 rounded-lg shadow-md">
                   <div className="font-bold flex items-center gap-2 md:col-span-2 md:border-r border-slate-300">
@@ -109,9 +108,9 @@ export default function Contact({ lang }: any) {
                   </div>
                   <div className="col-span-5 md:col-span-4">
                     <ol className="">
-                      <li>Ayutthaya : 332 (Update : Sep'2022)</li>
+                      <li>Ayutthaya : 332</li>
                       <li className="txt-remark">
-                        Chonburi: 185 (Update : Sep'2022)
+                        Chonburi: 185
                       </li>
                     </ol>
                   </div>
