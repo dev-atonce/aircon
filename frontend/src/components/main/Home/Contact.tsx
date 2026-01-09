@@ -108,9 +108,9 @@ export default function Contact({ lang }: any) {
                   </div>
                   <div className="col-span-5 md:col-span-4">
                     <ol className="">
-                      <li>Ayutthaya : 332</li>
+                      <li>Ayutthaya : 332 Person</li>
                       <li className="txt-remark">
-                        Chonburi: 185
+                        Chonburi: 185 Person
                       </li>
                     </ol>
                   </div>
@@ -145,7 +145,7 @@ export default function Contact({ lang }: any) {
                       <li className="txt-remark">Mitsubishi Electric (13%)</li>
                       <li>Mitsubishi Heavy (12%)</li>
                       <li>Toshiba (4%)</li>
-                      <li>Fujitsu(1%)</li>
+                      <li>General air conditioning (1%)</li>
                     </ol>
                   </div>
                 </div>
